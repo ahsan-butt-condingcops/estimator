@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient name:</strong>
+  <%= @cost_estimate.patient_name %>
+</p>
+
+<p>
+  <strong>Date of appointment:</strong>
+  <%= @cost_estimate.date_of_appointment %>
+</p>
+
+<p>
+  <strong>Plan name:</strong>
+  <%= @cost_estimate.plan_name %>
+</p>
+
+<p>
+  <strong>Plan type:</strong>
+  <%= @cost_estimate.plan_type %>
+</p>
+
+<p>
+  <strong>Co pay:</strong>
+  <%= @cost_estimate.co_pay %>
+</p>
+
+<p>
+  <strong>Co ins:</strong>
+  <%= @cost_estimate.co_ins %>
+</p>
+
+<p>
+  <strong>Deductable balance:</strong>
+  <%= @cost_estimate.deductable_balance %>
+</p>
+
+<p>
+  <strong>Out of pocket max balance:</strong>
+  <%= @cost_estimate.out_of_pocket_max_balance %>
+</p>
+
+<p>
+  <strong>Visit template:</strong>
+  <%= @cost_estimate.visit_template_id %>
+</p>
+
+<p>
+  <strong>Fee schedule:</strong>
+  <%= @cost_estimate.fee_schedule_id %>
+</p>
+
+<%= link_to 'Edit', edit_cost_estimate_path(@cost_estimate) %> |
+<%= link_to 'Back', cost_estimates_path %>

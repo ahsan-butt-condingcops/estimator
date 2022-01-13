@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Visit Templates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Terminologies</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visit_templates.each do |visit_template| %>
+      <tr>
+        <td><%= visit_template.name %></td>
+        <td>
+          <% visit_template.template_terminologies.pluck(:terminology_id).each do |terminology| %>
+              <%= Terminology.find(terminology).code %><br/>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', visit_template %></td>
+        <td><%= link_to 'Edit', edit_visit_template_path(visit_template) %></td>
+        <td><%= link_to 'Destroy', visit_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visit Template', new_visit_template_path %><br/>
+<%= link_to 'Home', '/' %>

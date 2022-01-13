@@ -1,0 +1,217 @@
+<%= form_with(model: cost_estimate, local: true) do |form| %>
+  <% if cost_estimate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cost_estimate.errors.count, "error") %> prohibited this cost_estimate from being saved:</h2>
+
+      <ul>
+        <% cost_estimate.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Patient Demoghrapics</legend>
+    <p>
+      <label for="patient_name">Patient Name</label>
+      <input type="text" name="patient_name" id="patient_name" >
+
+      <label for="date_of_appointment">Date of Appointment</label>
+      <input type="datetime-local" name="date_of_appointment" id="date_of_appointment" >
+
+      <label for="plan_name">Plan Name</label>
+      <input type="text" name="plan_name" id="plan_name" >
+
+      <label for="plan_type">Plan Type</label>
+      <input type="text" name="plan_type" id="plan_type" >
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Insurance Information</legend>
+    <p>
+      <label for="copay">Co Pay</label>
+      <input type="text" name="copay" id="copay" >
+
+      <label for="coins">Co Ins</label>
+      <input type="text" name="coins" id="coins" >
+
+      <label for="deductible_balance">Deductible Balance</label>
+      <input type="text" name="deductible_balance" id="deductible_balance" >
+
+      <label for="out_of_pocket_max_balance">Out of Pocket Max Balance</label>
+      <input type="text" name="out_of_pocket_max_balance" id="out_of_pocket_max_balance" >
+    </p>
+  </fieldset>
+
+  <br/>
+
+  <div class="field">
+    <%= form.label :visit_template_id %>
+    <%= form.select :visit_template_id, options_for_select(@visit_templates.map { |s| [s.name, s.id] }), { :include_blank => true} %>
+    <%= form.label :fee_schedule_id %>
+    <%= form.number_field :fee_schedule_id %>
+  </div>
+
+  <br/>
+
+  <fieldset>
+    <legend>Fully Covered Services</legend>
+    <p>
+      <label for="code_fcs">Procedure</label>
+      <input type="text" name="code" id="code_fcs" >
+
+      <label for="description_fcs">Description</label>
+      <input type="text" name="description" id="description_fcs" >
+
+      <label for="fee_schedule_fcs">Fee Schedule</label>
+      <input type="text" name="fee_schedule" id="fee_schedule_fcs" >
+
+      <label for="units_fcs">Units</label>
+      <input type="text" name="units" id="units_fcs" >
+
+      <label for="total_fcs">Total</label>
+      <input type="text" name="total" id="total_fcs" >
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Covered Services</legend>
+    <p>
+      <label for="code_cs">Procedure</label>
+      <input type="text" name="code" id="code_cs" >
+
+      <label for="description_cs">Description</label>
+      <input type="text" name="description" id="description_cs" >
+
+      <label for="fee_schedule_cs">Fee Schedule</label>
+      <input type="text" name="fee_schedule" id="fee_schedule_cs" >
+
+      <label for="units_cs">Units</label>
+      <input type="text" name="units" id="units_cs" >
+
+      <label for="total_cs">Total</label>
+      <input type="text" name="total" id="total_cs" >
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Non-Covered Services</legend>
+    <p>
+      <label for="code_ncs">Procedure</label>
+      <input type="text" name="code" id="code_ncs" >
+
+      <label for="description_ncs">Description</label>
+      <input type="text" name="description" id="description_ncs" >
+
+      <label for="fee_schedule_ncs">Fee Schedule</label>
+      <input type="text" name="fee_schedule" id="fee_schedule_ncs" >
+
+      <label for="units_ncs">Units</label>
+      <input type="text" name="units" id="units_ncs" >
+
+      <label for="total_ncs">Total</label>
+      <input type="text" name="total" id="total_ncs" >
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <p>
+      <label for="total_cost">Total Cost</label>
+      <input type="text" name="total_cost" id="total_cost" >
+
+      <label for="insurance_pays">Insurance Pays</label>
+      <input type="text" name="insurance_pays" id="insurance_pays" >
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Patient Resp</legend>
+    <p>
+      <label for="patient_copay">Co Pay</label>
+      <input type="text" name="patient_copay" id="patient_copay" >
+
+      <label for="patient_deductible">Deductible</label>
+      <input type="text" name="patient_deductible" id="patient_deductible" >
+
+      <label for="patient_coins">Co Ins</label>
+      <input type="text" name="patient_coins" id="patient_coins" >
+
+      <label for="patient_out_of_pocket_max">Out of Pocket Max</label>
+      <input type="text" name="patient_out_of_pocket_max" id="patient_out_of_pocket_max" >
+
+      <label for="patient_total_out_of_pocket_estimate">Total Out of Pocket Estimate</label>
+      <input type="text" name="patient_total_out_of_pocket_estimate" id="patient_total_out_of_pocket_estimate" >
+    </p>
+  </fieldset>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    // $('#cost_estimate_visit_template_id').change(alert_me_test);
+    $('#cost_estimate_visit_template_id').change(function(){
+        $.ajax({
+            url: "populate_terminologies",
+            type: "GET",
+            data: {visit_template_id: $('#cost_estimate_visit_template_id option:selected').val()},
+        })
+    });
+
+
+    $('#units_fcs').on('keyup change', function (){
+        $('#total_fcs').val($('#units_fcs').val() * $('#fee_schedule_fcs').val())
+        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    });
+
+    $('#fee_schedule_fcs').on('keyup change', function (){
+        $('#total_fcs').val($('#units_fcs').val() * $('#fee_schedule_fcs').val())
+        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    });
+
+
+    $('#units_cs').on('keyup change', function (){
+        $('#total_cs').val($('#units_cs').val() * $('#fee_schedule_cs').val())
+        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    });
+
+    $('#fee_schedule_cs').on('keyup change', function (){
+        $('#total_cs').val($('#units_cs').val() * $('#fee_schedule_cs').val())
+        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    });
+
+
+    $('#units_ncs').on('keyup change', function (){
+        $('#total_ncs').val($('#units_ncs').val() * $('#fee_schedule_ncs').val())
+        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    });
+
+    $('#fee_schedule_ncs').on('keyup change', function (){
+        $('#total_ncs').val($('#units_ncs').val() * $('#fee_schedule_ncs').val())
+        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    });
+
+    // copay calculation
+    var out_of_pocket_max_balance = parseFloat($('#out_of_pocket_max_balance').val());
+    var copay = parseFloat($('#copay').val());
+    var deductible_balance = parseFloat($('#deductible_balance').val());
+    var patient_copay = 0;
+
+    if (out_of_pocket_max_balance > copay) {
+        $('#patient_copay').val(copay)
+        patient_copay = copay
+    } else {
+        $('#patient_copay').val(out_of_pocket_max_balance)
+        patient_copay = out_of_pocket_max_balance
+    }
+
+    
+
+
+
+
+</script>

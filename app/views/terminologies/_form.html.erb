@@ -1,0 +1,42 @@
+<%= form_with(model: terminology, local: true) do |form| %>
+  <% if terminology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(terminology.errors.count, "error") %> prohibited this terminology from being saved:</h2>
+
+      <ul>
+        <% terminology.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modifier %>
+    <%= form.text_field :modifier %>
+  </div>
+
+  <div>
+    <%= form.label :coverage_type %>
+    <%= form.select :coverage_type, ['Fully Covered Service', 'Covered Service', 'Non-Covered Service'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :charge %>
+    <%= form.text_field :charge %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

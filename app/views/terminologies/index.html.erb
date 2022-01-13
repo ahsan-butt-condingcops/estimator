@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Terminologies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Modifier</th>
+      <th>Coverage Type</th>
+      <th>Charge</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @terminologies.each do |terminology| %>
+      <tr>
+        <td><%= terminology.code %></td>
+        <td><%= terminology.description %></td>
+        <td><%= terminology.modifier %></td>
+        <td><%= terminology.coverage_type %></td>
+        <td><%= terminology.charge %></td>
+        <td><%= link_to 'Show', terminology %></td>
+        <td><%= link_to 'Edit', edit_terminology_path(terminology) %></td>
+        <td><%= link_to 'Destroy', terminology, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Terminology', new_terminology_path %><br/>
+<%= link_to 'Home', '/' %>

@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cost Estimates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient name</th>
+      <th>Date of appointment</th>
+      <th>Plan name</th>
+      <th>Plan type</th>
+      <th>Co pay</th>
+      <th>Co ins</th>
+      <th>Deductable balance</th>
+      <th>Out of pocket max balance</th>
+      <th>Visit template</th>
+      <th>Fee schedule</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cost_estimates.each do |cost_estimate| %>
+      <tr>
+        <td><%= cost_estimate.patient_name %></td>
+        <td><%= cost_estimate.date_of_appointment %></td>
+        <td><%= cost_estimate.plan_name %></td>
+        <td><%= cost_estimate.plan_type %></td>
+        <td><%= cost_estimate.co_pay %></td>
+        <td><%= cost_estimate.co_ins %></td>
+        <td><%= cost_estimate.deductable_balance %></td>
+        <td><%= cost_estimate.out_of_pocket_max_balance %></td>
+        <td><%= cost_estimate.visit_template_id %></td>
+        <td><%= cost_estimate.fee_schedule_id %></td>
+        <td><%= link_to 'Show', cost_estimate %></td>
+        <td><%= link_to 'Edit', edit_cost_estimate_path(cost_estimate) %></td>
+        <td><%= link_to 'Destroy', cost_estimate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cost Estimate', new_cost_estimate_path %><br/>
+<%= link_to 'Home', '/' %>

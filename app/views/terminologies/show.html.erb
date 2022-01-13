@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @terminology.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @terminology.description %>
+</p>
+
+<p>
+  <strong>Modifier:</strong>
+  <%= @terminology.modifier %>
+</p>
+
+<p>
+  <strong>Charge:</strong>
+  <%= @terminology.charge %>
+</p>
+
+<%= link_to 'Edit', edit_terminology_path(@terminology) %> |
+<%= link_to 'Back', terminologies_path %>

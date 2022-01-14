@@ -5019,3 +5019,336 @@ Processing by CostEstimatesController#new as HTML
 Completed 200 OK in 57ms (Views: 24.7ms | ActiveRecord: 25.0ms | Allocations: 4305)
 
 
+Started GET "/" for ::1 at 2022-01-14 16:19:55 +0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:6
+  Rendered pages/home.html.erb within layouts/application (Duration: 398.9ms | Allocations: 168829)
+Completed 500 Internal Server Error in 407ms (ActiveRecord: 5.1ms | Allocations: 170895)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destroy_member_session_path' for #<#<Class:0x000000012c126600>:0x0000000119d53878>
+Did you mean?  destroy_user_session_path
+               destroy_session_path):
+    4: 
+    5: 
+    6: <% if current_user %>
+    7:   <%= link_to :logout, destroy_member_session_path, method: :delete %>aaa
+    8: <% else %>
+    9:   <%= link_to "Sign In", new_user_session_path %>
+   10:   <%= link_to "Sign Up", new_user_registration_path %>
+  
+app/views/pages/home.html.erb:7
+Started GET "/" for ::1 at 2022-01-14 16:20:17 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:6
+  Rendered pages/home.html.erb within layouts/application (Duration: 16.7ms | Allocations: 1313)
+Completed 200 OK in 32ms (Views: 25.8ms | ActiveRecord: 0.9ms | Allocations: 2965)
+
+
+Started GET "/" for ::1 at 2022-01-14 16:20:35 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:6
+  Rendered pages/home.html.erb within layouts/application (Duration: 31.4ms | Allocations: 1251)
+Completed 200 OK in 51ms (Views: 42.7ms | ActiveRecord: 0.8ms | Allocations: 2843)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-01-14 16:20:36 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.4.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-01-14 16:21:28 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:6
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1027)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 1592)
+
+
+Started GET "/" for ::1 at 2022-01-14 16:50:42 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:6
+  Rendered pages/home.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1127)
+Completed 200 OK in 30ms (Views: 17.0ms | ActiveRecord: 1.2ms | Allocations: 1695)
+
+
+Started GET "/" for ::1 at 2022-01-14 16:52:30 +0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:6
+  Rendered pages/home.html.erb within layouts/application (Duration: 29.3ms | Allocations: 7637)
+Completed 200 OK in 52ms (Views: 37.5ms | ActiveRecord: 10.3ms | Allocations: 10037)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-01-14 16:52:32 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.4) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.0.4.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-01-14 17:00:33 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:6
+  Rendered pages/home.html.erb within layouts/application (Duration: 9.1ms | Allocations: 6358)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.7ms | Allocations: 7102)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-01-14 17:00:34 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 2.7ms | Allocations: 5026)
+
+
+Started GET "/" for ::1 at 2022-01-14 17:00:34 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 195)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 762)
+
+
+Started GET "/" for ::1 at 2022-01-14 17:03:17 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 354)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 1951)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-14 17:03:26 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 615)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2988)
+Completed 200 OK in 52ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 7342)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-14 17:04:03 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"pSJSVgBsVMenJ4/rftXQRhHlIc5sTd7fv3gEUcqIubnbPBEK8BqdHo6O9hNyitmOPwn4cGrGmKL6WcYMY96CxQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 775ms (ActiveRecord: 2.5ms | Allocations: 4644)
+
+
+Started GET "/" for ::1 at 2022-01-14 17:04:03 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1027)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1606)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-14 17:09:02 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (1.7ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 31.3ms | Allocations: 10371)
+Completed 200 OK in 41ms (Views: 26.9ms | ActiveRecord: 9.2ms | Allocations: 11873)
+
+
+Started GET "/cost_estimates/new" for ::1 at 2022-01-14 17:09:03 +0500
+Processing by CostEstimatesController#new as HTML
+  Rendering cost_estimates/new.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.9ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/cost_estimates/_form.html.erb:39:in `map'
+  Rendered cost_estimates/_form.html.erb (Duration: 22.6ms | Allocations: 4953)
+  Rendered cost_estimates/new.html.erb within layouts/application (Duration: 24.7ms | Allocations: 5306)
+Completed 200 OK in 40ms (Views: 21.9ms | ActiveRecord: 4.7ms | Allocations: 6995)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-14 18:56:08 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (5.7ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 979)
+Completed 200 OK in 17ms (Views: 7.5ms | ActiveRecord: 5.7ms | Allocations: 1552)
+
+
+Started GET "/" for ::1 at 2022-01-14 18:56:09 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1060)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 1.7ms | Allocations: 1622)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-14 18:56:11 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (8.8ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 38.3ms | Allocations: 6975)
+Completed 200 OK in 47ms (Views: 23.9ms | ActiveRecord: 19.3ms | Allocations: 8453)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 18:56:21 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 12.2ms | Allocations: 2083)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 2427)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 3152)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 18:59:25 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 9.0ms | Allocations: 1768)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2114)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 3743)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 18:59:26 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 7.8ms | Allocations: 1340)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1434)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 2027)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 19:01:07 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 8.6ms | Allocations: 1334)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1427)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 2013)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 19:41:07 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 8.3ms | Allocations: 1771)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 2123)
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 3760)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 19:42:09 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 7.9ms | Allocations: 1767)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2113)
+Completed 200 OK in 31ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 3732)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 19:44:26 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 3.2ms | Allocations: 1768)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2114)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 3750)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 20:33:36 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 8.6ms | Allocations: 1752)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 2100)
+Completed 200 OK in 27ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 3711)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-14 21:02:02 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (45.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 66.0ms | Allocations: 1513)
+Completed 200 OK in 78ms (Views: 25.3ms | ActiveRecord: 45.3ms | Allocations: 2229)
+
+
+Started GET "/terminologies/2/edit" for ::1 at 2022-01-14 21:02:06 +0500
+Processing by TerminologiesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTerminology Load (1.5ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/terminologies_controller.rb:63:in `set_terminology'
+  Rendering terminologies/edit.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 16.0ms | Allocations: 1427)
+  Rendered terminologies/edit.html.erb within layouts/application (Duration: 28.6ms | Allocations: 1685)
+Completed 200 OK in 66ms (Views: 31.1ms | ActiveRecord: 1.8ms | Allocations: 3167)
+
+
+Started GET "/terminologies/2/edit" for ::1 at 2022-01-14 21:02:38 +0500
+Processing by TerminologiesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTerminology Load (0.8ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/terminologies_controller.rb:63:in `set_terminology'
+  Rendering terminologies/edit.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 11.1ms | Allocations: 1816)
+  Rendered terminologies/edit.html.erb within layouts/application (Duration: 13.6ms | Allocations: 2212)
+Completed 200 OK in 35ms (Views: 23.6ms | ActiveRecord: 0.8ms | Allocations: 4443)
+
+

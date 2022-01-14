@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <html>
-  <head>
-    <title>Estimator</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Estimator</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <!--    For Devise-->
-    <p class = "notice" ><%= notice %> </p>
-    <p class = "alert" ><%= alert %></p>
-    <!--    For Devise-->
-
-
-    <%= yield %>
-  </body>
+<body>
+<div style="text-align: center;">
+  <p class = "notice" ><%= notice %> </p>
+  <%= yield %>
+</div>
+</body>
 </html>

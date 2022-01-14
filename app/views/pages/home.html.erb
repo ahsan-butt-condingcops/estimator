@@ -1,11 +1,10 @@
-<%= link_to "CPTs Listing", '/terminologies' %><br/>
-<%= link_to "Visit Templates Listing", '/visit_templates' %><br/>
-<%= link_to "Cost Estimates Listing", '/cost_estimates' %><br/>
-
-
 <% if current_user %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <%= link_to "CPTs Listing", '/terminologies' %><br/>
+  <%= link_to "Visit Templates Listing", '/visit_templates' %><br/>
+  <%= link_to "Cost Estimates Listing", '/cost_estimates' %><br/>
+
+  <%= link_to :logout, destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to "Sign In", new_user_session_path %>
-  <%= link_to  "Sign Up", new_user_registration_path %>
+  <%= link_to "Sign Up", new_user_registration_path %>
 <% end %>

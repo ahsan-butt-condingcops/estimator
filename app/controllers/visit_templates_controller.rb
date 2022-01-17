@@ -12,13 +12,13 @@ class VisitTemplatesController < ApplicationController
 
   # GET /visit_templates/new
   def new
-    @terminologies = Terminology.all.select(:id, :code)
+    @terminologies = Terminology.all
     @visit_template = VisitTemplate.new
   end
 
   # GET /visit_templates/1/edit
   def edit
-    @terminologies = Terminology.all.select(:id, :code)
+    @terminologies = Terminology.all
   end
 
   # POST /visit_templates or /visit_templates.json

@@ -186,6 +186,7 @@
         var coins = parseFloat($('#coins').val());
         var deductible_balance = parseFloat($('#deductible_balance').val());
         var total_cs = parseFloat($('#total_cs').val());
+        var total_ncs = parseFloat($('#total_ncs').val());
         var patient_copay = 0;
         var patient_deductible = 0;
         var patient_coins = 0;
@@ -208,6 +209,12 @@
         $('#patient_copay').val(patient_copay)
         $('#patient_deductible').val(patient_deductible)
         $('#patient_coins').val(patient_coins)
+
+        var total_out_of_pocket_estimate = patient_copay+patient_deductible+patient_coins+total_ncs
+        $('#patient_total_out_of_pocket_estimate').val(total_out_of_pocket_estimate)
+
+        var total_cost = parseFloat($('#total_cost').val());
+        $('#insurance_pays').val(total_cost-total_out_of_pocket_estimate)
     });
 
 </script>

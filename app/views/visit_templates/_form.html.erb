@@ -15,9 +15,13 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+
   <div class="field">
-    <%= select_tag 'terminologies[]', options_for_select(@terminologies.map { |s| [s.code, s.id] },
-                                    @visit_template.template_terminologies.pluck(:terminology_id)), multiple: true, size: 10 %>
+    <label for="multi-select">Terminologies</label>
+    <div class="select select-multiple">
+      <%= select_tag 'terminologies[]', options_for_select(@terminologies.map{|s| [s.code+'('+s.description+')',s.id] },
+                                                           @visit_template.template_terminologies.pluck(:terminology_id)), multiple: true, size: 10 %>
+    </div>
   </div>
 
   <div class="actions">

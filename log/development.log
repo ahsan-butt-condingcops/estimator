@@ -5352,3 +5352,1000 @@ Processing by TerminologiesController#edit as HTML
 Completed 200 OK in 35ms (Views: 23.6ms | ActiveRecord: 0.8ms | Allocations: 4443)
 
 
+Started GET "/terminologies" for ::1 at 2022-01-14 21:06:42 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (1.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1431)
+Completed 200 OK in 23ms (Views: 15.5ms | ActiveRecord: 1.0ms | Allocations: 3054)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:06:44 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 18.1ms | Allocations: 1272)
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 2.3ms | Allocations: 2511)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-01-14 21:06:52 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 0.7ms | Allocations: 2143)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:06:52 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.0ms | Allocations: 139)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 699)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-14 21:06:55 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 520)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1881)
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 3696)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-14 21:06:57 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"iUE91UkqFNcnfMSmrY3djWi4Zoe6eA8pAecqSzMQjjkIH5Owbbp8j6OXFdOmf7uorzk/3qnjMG+D0REHi5eueg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 758ms (ActiveRecord: 2.7ms | Allocations: 3829)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:06:57 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1027)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 1624)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:07:56 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1250)
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 0.9ms | Allocations: 2859)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-01-14 21:07:58 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.6ms | Allocations: 2142)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:07:58 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 144)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 719)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-14 21:08:00 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 520)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1884)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 3697)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-14 21:08:04 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"cveo/65Pz8XWMHQIqF8yqZVVuYgesgWReJ9IzUEnqmkpKGrU01jYTB/k/mE9WVlfp+mrKVFEItnxkW7IQrFMNQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 742ms (ActiveRecord: 0.7ms | Allocations: 3833)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:08:05 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1027)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1602)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-14 21:08:07 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (0.6ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1431)
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.6ms | Allocations: 2681)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:08:18 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1028)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 1610)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-14 21:08:20 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (4.2ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1261)
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 4.2ms | Allocations: 2499)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:08:23 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1028)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 1598)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-14 21:08:25 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (0.6ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 865)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 1429)
+
+
+Started GET "/cost_estimates/new" for ::1 at 2022-01-14 21:08:27 +0500
+Processing by CostEstimatesController#new as HTML
+  Rendering cost_estimates/new.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (1.2ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/cost_estimates/_form.html.erb:39:in `map'
+  Rendered cost_estimates/_form.html.erb (Duration: 9.9ms | Allocations: 1642)
+  Rendered cost_estimates/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 1990)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 1.2ms | Allocations: 2724)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-14 21:08:35 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (0.7ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 868)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.7ms | Allocations: 1438)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:08:36 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1028)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 1598)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-14 21:08:38 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.6ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.1ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 46.5ms | Allocations: 10104)
+Completed 200 OK in 50ms (Views: 31.8ms | ActiveRecord: 16.7ms | Allocations: 11388)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-14 21:08:39 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies"."id", "terminologies"."code" FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:19:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 21.6ms | Allocations: 1975)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 24.8ms | Allocations: 2319)
+Completed 200 OK in 33ms (Views: 24.4ms | ActiveRecord: 3.0ms | Allocations: 3056)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-14 21:08:44 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.5ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.6ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 37.1ms | Allocations: 6342)
+Completed 200 OK in 41ms (Views: 35.8ms | ActiveRecord: 3.1ms | Allocations: 6902)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:08:48 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:2
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1028)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 1588)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-01-14 21:10:17 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 0.6ms | Allocations: 2150)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:10:18 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 348)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 1952)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-01-14 21:10:22 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.2ms | Allocations: 520)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1878)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 3674)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-01-14 21:10:23 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xXS3dOMQD7cTO4kWUSJCf+TusEM5hnMorH2dw9XdAqpTWbm6pm2IGF4TW/iHxGU5tHZHxlBS/4h1r8RqFYhaBg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 745ms (ActiveRecord: 0.8ms | Allocations: 3829)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:10:24 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1027)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1614)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-14 21:10:27 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (0.9ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1431)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.9ms | Allocations: 2666)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-14 21:10:31 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 12.0ms | Allocations: 1752)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2098)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 2827)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-14 21:10:33 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (0.8ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1124)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.8ms | Allocations: 1698)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:10:36 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1028)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.4ms | Allocations: 1590)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-14 21:10:37 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.7ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 71.0ms | Allocations: 6655)
+Completed 200 OK in 80ms (Views: 73.6ms | ActiveRecord: 2.2ms | Allocations: 7895)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-14 21:10:38 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies"."id", "terminologies"."code" FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:19:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 10.7ms | Allocations: 1777)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 2123)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 2864)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-14 21:10:47 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.4ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 32.1ms | Allocations: 6342)
+Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 2.4ms | Allocations: 6902)
+
+
+Started GET "/" for ::1 at 2022-01-14 21:11:14 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1028)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 1596)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-14 23:37:28 +0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (5.9ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 42.3ms | Allocations: 10830)
+Completed 200 OK in 55ms (Views: 35.0ms | ActiveRecord: 14.5ms | Allocations: 13426)
+
+
+Started GET "/cost_estimates/new" for ::1 at 2022-01-14 23:37:30 +0500
+Processing by CostEstimatesController#new as HTML
+  Rendering cost_estimates/new.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (1.8ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/cost_estimates/_form.html.erb:39:in `map'
+  Rendered cost_estimates/_form.html.erb (Duration: 35.5ms | Allocations: 4957)
+  Rendered cost_estimates/new.html.erb within layouts/application (Duration: 37.3ms | Allocations: 5315)
+Completed 200 OK in 60ms (Views: 36.3ms | ActiveRecord: 4.6ms | Allocations: 7022)
+
+
+Started GET "/cost_estimates/new" for ::1 at 2022-01-17 12:48:41 +0500
+Processing by CostEstimatesController#new as HTML
+  Rendering cost_estimates/new.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (6.9ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/cost_estimates/_form.html.erb:39:in `map'
+  Rendered cost_estimates/_form.html.erb (Duration: 16.6ms | Allocations: 1717)
+  Rendered cost_estimates/new.html.erb within layouts/application (Duration: 19.1ms | Allocations: 2073)
+Completed 200 OK in 34ms (Views: 20.6ms | ActiveRecord: 6.9ms | Allocations: 3708)
+
+
+Started GET "/cost_estimates/populate_terminologies?visit_template_id=1" for ::1 at 2022-01-17 12:49:13 +0500
+Processing by CostEstimatesController#populate_terminologies as */*
+  Parameters: {"visit_template_id"=>"1"}
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:63:in `populate_terminologies'
+  [1m[36mTerminology Load (4.7ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" IN ($1, $2, $3) AND "terminologies"."coverage_type" = $4 ORDER BY "terminologies"."id" ASC LIMIT $5[0m  [["id", 1], ["id", 2], ["id", 3], ["coverage_type", "Fully Covered Service"], ["LIMIT", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:65:in `populate_terminologies'
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" IN ($1, $2, $3) AND "terminologies"."coverage_type" = $4 ORDER BY "terminologies"."id" ASC LIMIT $5[0m  [["id", 1], ["id", 2], ["id", 3], ["coverage_type", "Covered Service"], ["LIMIT", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:66:in `populate_terminologies'
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" IN ($1, $2, $3) AND "terminologies"."coverage_type" = $4 ORDER BY "terminologies"."id" ASC LIMIT $5[0m  [["id", 1], ["id", 2], ["id", 3], ["coverage_type", "Non-Covered Service"], ["LIMIT", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:67:in `populate_terminologies'
+  Rendering cost_estimates/populate_terminologies.js.erb
+  Rendered cost_estimates/populate_terminologies.js.erb (Duration: 1.2ms | Allocations: 299)
+Completed 200 OK in 112ms (Views: 4.6ms | ActiveRecord: 30.8ms | Allocations: 15029)
+
+
+Started GET "/cost_estimates/new" for ::1 at 2022-01-17 14:53:38 +0500
+Processing by CostEstimatesController#new as HTML
+  Rendering cost_estimates/new.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (6.9ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/cost_estimates/_form.html.erb:39:in `map'
+  Rendered cost_estimates/_form.html.erb (Duration: 17.4ms | Allocations: 1723)
+  Rendered cost_estimates/new.html.erb within layouts/application (Duration: 22.6ms | Allocations: 2070)
+Completed 200 OK in 38ms (Views: 23.6ms | ActiveRecord: 6.9ms | Allocations: 3708)
+
+
+Started GET "/cost_estimates/populate_terminologies?visit_template_id=1" for ::1 at 2022-01-17 14:53:59 +0500
+Processing by CostEstimatesController#populate_terminologies as */*
+  Parameters: {"visit_template_id"=>"1"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:63:in `populate_terminologies'
+  [1m[36mTerminology Load (2.7ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" IN ($1, $2, $3) AND "terminologies"."coverage_type" = $4 ORDER BY "terminologies"."id" ASC LIMIT $5[0m  [["id", 1], ["id", 2], ["id", 3], ["coverage_type", "Fully Covered Service"], ["LIMIT", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:65:in `populate_terminologies'
+  [1m[36mTerminology Load (0.6ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" IN ($1, $2, $3) AND "terminologies"."coverage_type" = $4 ORDER BY "terminologies"."id" ASC LIMIT $5[0m  [["id", 1], ["id", 2], ["id", 3], ["coverage_type", "Covered Service"], ["LIMIT", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:66:in `populate_terminologies'
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" IN ($1, $2, $3) AND "terminologies"."coverage_type" = $4 ORDER BY "terminologies"."id" ASC LIMIT $5[0m  [["id", 1], ["id", 2], ["id", 3], ["coverage_type", "Non-Covered Service"], ["LIMIT", 1]]
+  ↳ app/controllers/cost_estimates_controller.rb:67:in `populate_terminologies'
+  Rendering cost_estimates/populate_terminologies.js.erb
+  Rendered cost_estimates/populate_terminologies.js.erb (Duration: 1.3ms | Allocations: 298)
+Completed 200 OK in 72ms (Views: 4.5ms | ActiveRecord: 5.1ms | Allocations: 5351)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-17 14:54:33 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (0.7ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1263)
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 0.7ms | Allocations: 1971)
+
+
+Started GET "/" for ::1 at 2022-01-17 14:54:35 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 38.8ms | Allocations: 6856)
+Completed 200 OK in 43ms (Views: 22.3ms | ActiveRecord: 19.4ms | Allocations: 8134)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-17 14:54:37 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1493)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.4ms | Allocations: 2777)
+
+
+Started GET "/terminologies/new" for ::1 at 2022-01-17 14:54:39 +0500
+Processing by TerminologiesController#new as HTML
+  Rendering terminologies/new.html.erb within layouts/application
+  Rendered terminologies/_form.html.erb (Duration: 28.3ms | Allocations: 4454)
+  Rendered terminologies/new.html.erb within layouts/application (Duration: 31.7ms | Allocations: 4796)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.0ms | Allocations: 5517)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-17 14:54:40 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1124)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 1708)
+
+
+Started GET "/" for ::1 at 2022-01-17 14:54:41 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1029)
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.8ms | Allocations: 1603)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 14:54:43 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.5ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 34.3ms | Allocations: 8999)
+Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 2.5ms | Allocations: 10295)
+
+
+Started GET "/visit_templates/1/edit" for ::1 at 2022-01-17 14:54:45 +0500
+Processing by VisitTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (1.9ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/edit.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies"."id", "terminologies"."code" FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:19:in `map'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/_form.html.erb:20
+  Rendered visit_templates/_form.html.erb (Duration: 19.2ms | Allocations: 2531)
+  Rendered visit_templates/edit.html.erb within layouts/application (Duration: 22.9ms | Allocations: 2923)
+Completed 200 OK in 37ms (Views: 24.3ms | ActiveRecord: 3.0ms | Allocations: 4374)
+
+
+Started GET "/visit_templates/1/edit" for ::1 at 2022-01-17 14:55:37 +0500
+Processing by VisitTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (1.0ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/edit.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies"."id", "terminologies"."code" FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:20:in `map'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/_form.html.erb:21
+  Rendered visit_templates/_form.html.erb (Duration: 16.8ms | Allocations: 2667)
+  Rendered visit_templates/edit.html.erb within layouts/application (Duration: 19.8ms | Allocations: 3060)
+Completed 200 OK in 48ms (Views: 30.6ms | ActiveRecord: 2.1ms | Allocations: 5284)
+
+
+Started GET "/visit_templates/1/edit" for ::1 at 2022-01-17 14:56:02 +0500
+Processing by VisitTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (0.4ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/edit.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies"."id", "terminologies"."code" FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/_form.html.erb:22
+  Rendered visit_templates/_form.html.erb (Duration: 16.3ms | Allocations: 2635)
+  Rendered visit_templates/edit.html.erb within layouts/application (Duration: 19.3ms | Allocations: 3028)
+Completed 200 OK in 34ms (Views: 26.1ms | ActiveRecord: 1.3ms | Allocations: 5243)
+
+
+Started GET "/visit_templates/1" for ::1 at 2022-01-17 14:56:47 +0500
+Processing by VisitTemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (0.6ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/show.html.erb within layouts/application
+  Rendered visit_templates/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 231)
+Completed 200 OK in 30ms (Views: 13.4ms | ActiveRecord: 0.6ms | Allocations: 2409)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 14:56:50 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.7ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.6ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 37.3ms | Allocations: 6653)
+Completed 200 OK in 43ms (Views: 36.3ms | ActiveRecord: 3.2ms | Allocations: 7360)
+
+
+Started GET "/" for ::1 at 2022-01-17 14:56:53 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1233)
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 2473)
+
+
+Started GET "/terminologies" for ::1 at 2022-01-17 14:56:54 +0500
+Processing by TerminologiesController#index as HTML
+  Rendering terminologies/index.html.erb within layouts/application
+  [1m[36mTerminology Load (0.6ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/terminologies/index.html.erb:18
+  Rendered terminologies/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1431)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.6ms | Allocations: 2656)
+
+
+Started GET "/" for ::1 at 2022-01-17 14:57:17 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1232)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 2806)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 14:57:19 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.6ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 6653)
+Completed 200 OK in 40ms (Views: 33.8ms | ActiveRecord: 2.3ms | Allocations: 7878)
+
+
+Started GET "/visit_templates/1/edit" for ::1 at 2022-01-17 14:57:21 +0500
+Processing by VisitTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (0.4ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/edit.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies"."id", "terminologies"."code" FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 24.7ms | Allocations: 5465)
+  Rendered visit_templates/edit.html.erb within layouts/application (Duration: 27.4ms | Allocations: 5812)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.9ms | Allocations: 7045)
+
+
+  
+ActionView::Template::Error (missing attribute: description):
+    18: 
+    19:   <%= form.label :terminolgies %>
+    20:   <div class="field">
+    21:     <%= select_tag 'terminologies[]', options_for_select(@terminologies.map { |s| [s.code + '(' + s.description + ')'  , s.id] },
+    22:                                     @visit_template.template_terminologies.pluck(:terminology_id)), multiple: true, size: 10 %>
+    23:   </div>
+    24: 
+  
+app/views/visit_templates/_form.html.erb:21
+app/views/visit_templates/_form.html.erb:21:in `map'
+app/views/visit_templates/_form.html.erb:21
+app/views/visit_templates/_form.html.erb:1
+app/views/visit_templates/edit.html.erb:3
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" ORDER BY "terminologies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTerminology Load (0.8ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" ORDER BY "terminologies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/visit_templates/1/edit" for ::1 at 2022-01-17 14:58:10 +0500
+Processing by VisitTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (0.8ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/edit.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies"."id", "terminologies"."code" FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 5.4ms | Allocations: 2265)
+  Rendered visit_templates/edit.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2339)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.3ms | Allocations: 3470)
+
+
+  
+ActionView::Template::Error (missing attribute: description):
+    18: 
+    19:   <%= form.label :terminolgies %>
+    20:   <div class="field">
+    21:     <%= select_tag 'terminologies[]', options_for_select(@terminologies.map { |s| [s.code + '(' + s.description + ')'  , s.id] },
+    22:                                     @visit_template.template_terminologies.pluck(:terminology_id)), multiple: true, size: 10 %>
+    23:   </div>
+    24: 
+  
+app/views/visit_templates/_form.html.erb:21
+app/views/visit_templates/_form.html.erb:21:in `map'
+app/views/visit_templates/_form.html.erb:21
+app/views/visit_templates/_form.html.erb:1
+app/views/visit_templates/edit.html.erb:3
+Started GET "/visit_templates/1/edit" for ::1 at 2022-01-17 14:59:01 +0500
+Processing by VisitTemplatesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (0.2ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/edit.html.erb within layouts/application
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/_form.html.erb:22
+  Rendered visit_templates/_form.html.erb (Duration: 16.3ms | Allocations: 9348)
+  Rendered visit_templates/edit.html.erb within layouts/application (Duration: 16.6ms | Allocations: 9474)
+Completed 200 OK in 30ms (Views: 11.7ms | ActiveRecord: 11.0ms | Allocations: 14544)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 14:59:30 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.7ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 33.8ms | Allocations: 6449)
+Completed 200 OK in 39ms (Views: 32.7ms | ActiveRecord: 3.1ms | Allocations: 7016)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-17 14:59:32 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (0.7ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 45.2ms | Allocations: 4633)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 47.9ms | Allocations: 4847)
+Completed 200 OK in 54ms (Views: 47.3ms | ActiveRecord: 2.5ms | Allocations: 5584)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-17 15:04:56 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (1.1ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 9.9ms | Allocations: 1911)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2258)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 1.1ms | Allocations: 3872)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-17 15:05:46 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (1.1ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 11.8ms | Allocations: 1521)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1615)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 1.1ms | Allocations: 2216)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-17 15:06:14 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (0.7ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:22:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 16.1ms | Allocations: 1832)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 20.0ms | Allocations: 2178)
+Completed 200 OK in 39ms (Views: 28.3ms | ActiveRecord: 0.7ms | Allocations: 3795)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-17 15:06:26 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:21:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 15.6ms | Allocations: 1829)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 18.5ms | Allocations: 2175)
+Completed 200 OK in 31ms (Views: 26.0ms | ActiveRecord: 0.5ms | Allocations: 3802)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-17 15:06:47 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (0.7ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:22:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 33.9ms | Allocations: 1832)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 37.7ms | Allocations: 2178)
+Completed 200 OK in 57ms (Views: 46.5ms | ActiveRecord: 0.7ms | Allocations: 3785)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 15:09:43 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (1.1ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 6703)
+Completed 200 OK in 36ms (Views: 26.7ms | ActiveRecord: 3.3ms | Allocations: 7419)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 15:11:13 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.9ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.5ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 31.7ms | Allocations: 6708)
+Completed 200 OK in 53ms (Views: 44.7ms | ActiveRecord: 3.3ms | Allocations: 8293)
+
+
+Started GET "/visit_templates/1" for ::1 at 2022-01-17 15:11:19 +0500
+Processing by VisitTemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitTemplate Load (0.4ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates" WHERE "visit_templates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/visit_templates_controller.rb:71:in `set_visit_template'
+  Rendering visit_templates/show.html.erb within layouts/application
+  Rendered visit_templates/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 227)
+Completed 200 OK in 13ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 1523)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 15:11:21 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.6ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.2ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 29.9ms | Allocations: 6379)
+Completed 200 OK in 34ms (Views: 29.5ms | ActiveRecord: 2.2ms | Allocations: 6957)
+
+
+Started GET "/visit_templates/new" for ::1 at 2022-01-17 15:11:44 +0500
+Processing by VisitTemplatesController#new as HTML
+  Rendering visit_templates/new.html.erb within layouts/application
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies"[0m
+  ↳ app/views/visit_templates/_form.html.erb:22:in `map'
+  Rendered visit_templates/_form.html.erb (Duration: 10.9ms | Allocations: 1830)
+  Rendered visit_templates/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 2177)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 2904)
+
+
+Started GET "/visit_templates" for ::1 at 2022-01-17 15:11:46 +0500
+Processing by VisitTemplatesController#index as HTML
+  Rendering visit_templates/index.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.4ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/visit_templates/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 1]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.3ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[36mTerminology Load (0.4ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 3]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "template_terminologies"."terminology_id" FROM "template_terminologies" WHERE "template_terminologies"."visit_template_id" = $1[0m  [["visit_template_id", 2]]
+  ↳ app/views/visit_templates/index.html.erb:19
+  [1m[36mCACHE Terminology Load (0.0ms)[0m  [1m[34mSELECT "terminologies".* FROM "terminologies" WHERE "terminologies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/visit_templates/index.html.erb:20
+  Rendered visit_templates/index.html.erb within layouts/application (Duration: 29.8ms | Allocations: 6380)
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 2.2ms | Allocations: 6948)
+
+
+Started GET "/" for ::1 at 2022-01-17 15:11:47 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:1
+  Rendered pages/home.html.erb within layouts/application (Duration: 35.9ms | Allocations: 6686)
+Completed 200 OK in 42ms (Views: 24.0ms | ActiveRecord: 15.8ms | Allocations: 7934)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-17 15:11:49 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (0.8ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 48.6ms | Allocations: 9885)
+Completed 200 OK in 61ms (Views: 47.1ms | ActiveRecord: 6.2ms | Allocations: 11371)
+
+
+Started GET "/cost_estimates/new" for ::1 at 2022-01-17 15:11:54 +0500
+Processing by CostEstimatesController#new as HTML
+  Rendering cost_estimates/new.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.7ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/cost_estimates/_form.html.erb:39:in `map'
+  Rendered cost_estimates/_form.html.erb (Duration: 12.5ms | Allocations: 2330)
+  Rendered cost_estimates/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 2672)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.7ms | Allocations: 3415)
+
+
+Started GET "/cost_estimates" for ::1 at 2022-01-17 15:11:58 +0500
+Processing by CostEstimatesController#index as HTML
+  Rendering cost_estimates/index.html.erb within layouts/application
+  [1m[36mCostEstimate Load (0.7ms)[0m  [1m[34mSELECT "cost_estimates".* FROM "cost_estimates"[0m
+  ↳ app/views/cost_estimates/index.html.erb:23
+  Rendered cost_estimates/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 868)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.7ms | Allocations: 1442)
+
+
+Started GET "/cost_estimates/new" for ::1 at 2022-01-17 15:38:25 +0500
+Processing by CostEstimatesController#new as HTML
+  Rendering cost_estimates/new.html.erb within layouts/application
+  [1m[36mVisitTemplate Load (0.8ms)[0m  [1m[34mSELECT "visit_templates".* FROM "visit_templates"[0m
+  ↳ app/views/cost_estimates/_form.html.erb:39:in `map'
+  Rendered cost_estimates/_form.html.erb (Duration: 6.7ms | Allocations: 1065)
+  Rendered cost_estimates/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1158)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 1765)
+
+

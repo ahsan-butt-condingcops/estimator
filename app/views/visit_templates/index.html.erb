@@ -17,7 +17,8 @@
         <td><%= visit_template.name %></td>
         <td>
           <% visit_template.template_terminologies.pluck(:terminology_id).each do |terminology| %>
-              <%= Terminology.find(terminology).code %><br/>
+            <% terminology = Terminology.find(terminology) %>
+            <%= terminology.code + '(' + terminology.description  + ')' %><br/>
           <% end %>
         </td>
         <td><%= link_to 'Show', visit_template %></td>

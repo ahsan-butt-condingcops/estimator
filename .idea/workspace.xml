@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9f0e58f-85e6-4861-9256-e4a6f311aab0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/terminologies/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/terminologies/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/terminologies/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/terminologies/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/visit_templates_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/visit_templates_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cost_estimates/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cost_estimates/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/visit_templates/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/visit_templates/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/visit_templates/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/visit_templates/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/1d/ac084335cc6889" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/1d/ac084335cc6889" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/54/6789683cee394c" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/54/6789683cee394c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/bf/254c208916ba0a" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/bf/254c208916ba0a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/load-path-cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/pids/server.pid" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +176,8 @@
       <workItem from="1641804371612" duration="10550000" />
       <workItem from="1641895661583" duration="1477000" />
       <workItem from="1641898562188" duration="38008000" />
-      <workItem from="1642159115943" duration="4670000" />
+      <workItem from="1642159115943" duration="5248000" />
+      <workItem from="1642405530369" duration="2066000" />
     </task>
     <servers />
   </component>

@@ -13,6 +13,7 @@ class CostEstimatesController < ApplicationController
   # GET /cost_estimates/new
   def new
     @visit_templates = VisitTemplate.all
+    @fee_schedules = FeeSchedule.all
     @cost_estimate = CostEstimate.new
   end
 
@@ -66,6 +67,22 @@ class CostEstimatesController < ApplicationController
     @cs = @terminologies.where(coverage_type: 'Covered Service').first
     @ncs = @terminologies.where(coverage_type: 'Non-Covered Service').first
     # debugger
+  end
+
+  def populate_charges
+    @template_terminologies = TemplateTerminology.where(visit_template_id: params[:visit_template_id].to_i)
+    @terminologies = Terminology.where(id: @template_terminologies.pluck(:terminology_id))
+    @fee_schedule = FeeSchedule.find(params[:fee_schedule_id].to_i)
+
+    @fcs_charge = TerminologyFeeSchedule.where(
+      terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').first.id,
+      fee_schedule_id: @fee_schedule.id).first.value
+    @cs_charge = TerminologyFeeSchedule.where(
+      terminology_id: @terminologies.where(coverage_type: 'Covered Service').first.id,
+      fee_schedule_id: @fee_schedule.id).first.value
+    @ncs_charge = TerminologyFeeSchedule.where(
+      terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').first.id,
+      fee_schedule_id: @fee_schedule.id).first.value
   end
 
   private

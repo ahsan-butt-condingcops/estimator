@@ -1,3 +1,3 @@
 class Terminology < ApplicationRecord
-  # belongs_to :template_terminology
+  has_many :terminology_fee_schedules
 end

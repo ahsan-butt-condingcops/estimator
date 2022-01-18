@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_082132) do
+ActiveRecord::Schema.define(version: 2022_01_18_080029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(version: 2022_01_12_082132) do
     t.string "coverage_type"
   end
 
+  create_table "fee_schedules", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "template_terminologies", force: :cascade do |t|
     t.integer "visit_template_id"
     t.integer "terminology_id"
@@ -64,6 +70,14 @@ ActiveRecord::Schema.define(version: 2022_01_12_082132) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "coverage_type"
+  end
+
+  create_table "terminology_fee_schedules", force: :cascade do |t|
+    t.integer "terminology_id"
+    t.integer "fee_schedule_id"
+    t.float "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -38,9 +38,8 @@
   <label>Visit Template</label>
   <%= select_tag :visit_template_id, options_for_select(@visit_templates.map { |s| [s.name, s.id] }), { :include_blank => true} %>
   <label>Fee Schedule</label>
-  <%= number_field_tag :fee_schedule_id %>
+  <%= select_tag :fee_schedule_id, options_for_select(@fee_schedules.map { |s| [s.name, s.id] }), { :include_blank => true} %>
 </div>
-
 <br/>
 
 <fieldset>
@@ -142,6 +141,14 @@
             url: "populate_terminologies",
             type: "GET",
             data: {visit_template_id: $('#visit_template_id option:selected').val()},
+        })
+    });
+
+    $('#fee_schedule_id').change(function(){
+        $.ajax({
+            url: "populate_charges",
+            type: "GET",
+            data: {visit_template_id: $('#visit_template_id option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
         })
     });
 

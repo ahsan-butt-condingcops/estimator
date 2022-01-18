@@ -1,0 +1,2 @@
+class FeeSchedule < ApplicationRecord
+end

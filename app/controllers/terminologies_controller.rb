@@ -13,18 +13,30 @@ class TerminologiesController < ApplicationController
   # GET /terminologies/new
   def new
     @terminology = Terminology.new
+    @fee_schedules = FeeSchedule.all
   end
 
   # GET /terminologies/1/edit
   def edit
+    @fee_schedules = FeeSchedule.all
   end
 
   # POST /terminologies or /terminologies.json
   def create
     @terminology = Terminology.new(terminology_params)
-
     respond_to do |format|
       if @terminology.save
+        @fee_schedules = FeeSchedule.all
+
+        @fee_schedules.each do |fs|
+          tfs = TerminologyFeeSchedule.where(terminology_id: @terminology.id, fee_schedule_id: fs.id)
+          if tfs.exists?
+            tfs.first.update_columns(value: params[fs.name])
+          else
+            TerminologyFeeSchedule.create!(terminology_id: @terminology.id, fee_schedule_id: fs.id, value: params[fs.name])
+          end
+        end
+
         format.html { redirect_to terminology_url(@terminology), notice: "Terminology was successfully created." }
         format.json { render :show, status: :created, location: @terminology }
       else
@@ -38,6 +50,17 @@ class TerminologiesController < ApplicationController
   def update
     respond_to do |format|
       if @terminology.update(terminology_params)
+        @fee_schedules = FeeSchedule.all
+
+        @fee_schedules.each do |fs|
+          tfs = TerminologyFeeSchedule.where(terminology_id: @terminology.id, fee_schedule_id: fs.id)
+          if tfs.exists?
+            tfs.first.update_columns(value: params[fs.name])
+          else
+            TerminologyFeeSchedule.create!(terminology_id: @terminology.id, fee_schedule_id: fs.id, value: params[fs.name])
+          end
+        end
+
         format.html { redirect_to terminology_url(@terminology), notice: "Terminology was successfully updated." }
         format.json { render :show, status: :ok, location: @terminology }
       else

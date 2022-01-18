@@ -36,6 +36,24 @@
     <%= form.text_field :charge %>
   </div>
 
+  <% @fee_schedules.each do |fs| %>
+    <div class="field">
+      <%
+        if @terminology.new_record?
+          tfs = ''
+        else
+          if TerminologyFeeSchedule.where(terminology_id: @terminology.id, fee_schedule_id: fs.id).exists?
+            tfs = TerminologyFeeSchedule.where(terminology_id: @terminology.id, fee_schedule_id: fs.id).last.value
+          else
+            tfs = ''
+          end
+        end
+      %>
+      <label for=<%= fs.name %>><%= fs.name %></label>
+      <input type="text" name=<%= fs.name %> id=<%= fs.name %> value=<%= tfs %> >
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

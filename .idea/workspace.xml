@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9f0e58f-85e6-4861-9256-e4a6f311aab0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/cost_estimates/populate_charges.js.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/visit_templates_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/visit_templates_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/cost_estimates_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cost_estimates_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/terminologies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/terminologies_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/terminology.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/terminology.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/cost_estimates/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cost_estimates/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/visit_templates/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/visit_templates/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/visit_templates/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/visit_templates/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cost_estimates/populate_terminologies.js.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cost_estimates/populate_terminologies.js.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/terminologies/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/terminologies/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/pids/server.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/1d/ac084335cc6889" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/1d/ac084335cc6889" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/9b/1162c51f948ac5" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/9b/1162c51f948ac5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/b2/24fb8a8c37fce9" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/b2/24fb8a8c37fce9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/bf/254c208916ba0a" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/bf/254c208916ba0a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/load-path-cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +68,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/cost_estimates" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/cost_estimates" />
+    </key>
   </component>
   <component name="RunManager" selected="Rails.Development: estimator">
     <configuration name="Development: estimator" type="RailsRunConfigurationType" factoryName="Rails">
@@ -177,11 +192,22 @@
       <workItem from="1641895661583" duration="1477000" />
       <workItem from="1641898562188" duration="38008000" />
       <workItem from="1642159115943" duration="5248000" />
-      <workItem from="1642405530369" duration="2066000" />
+      <workItem from="1642405530369" duration="12244000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

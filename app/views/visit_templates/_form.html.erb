@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <label>Fee Schedule</label>
+      <%= form.select :fee_schedule_id, options_for_select(@fee_schedules.map{|s| [s.name,s.id] }, @visit_template.fee_schedule_id) %>
+  </div>
+
+  <div class="field">
     <label for="multi-select">Terminologies</label>
     <div class="select select-multiple">
       <%= select_tag 'terminologies[]', options_for_select(@terminologies.map{|s| [s.code+'('+s.description+')',s.id] },

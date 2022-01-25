@@ -1,12 +1,41 @@
-$('#code_fcs').val("<%= @fcs.code %>")
-$('#description_fcs').val("<%= @fcs.description %>")
-// $('#fee_schedule_fcs').val("<%= @fcs.charge %>")
+$('#terminology_fcs1').select2("val", "<%= @fcs1.nil? ? '' : @fcs1.id %>");
+$('#description_fcs1').val("<%= @fcs1.nil? ? '' : @fcs1.description %>")
+$('#terminology_fcs2').select2("val", "<%= @fcs2.nil? ? '' : @fcs2.id %>");
+$('#description_fcs2').val("<%= @fcs2.nil? ? '' : @fcs2.description %>")
+$('#terminology_fcs3').select2("val", "<%= @fcs3.nil? ? '' : @fcs3.id %>");
+$('#description_fcs3').val("<%= @fcs3.nil? ? '' : @fcs3.description %>")
 
-$('#code_cs').val("<%= @cs.code %>")
-$('#description_cs').val("<%= @cs.description %>")
-//$('#fee_schedule_cs').val("<%= @cs.charge %>")
+$('#terminology_cs1').select2("val", "<%= @cs1.nil? ? '' : @cs1.id %>");
+$('#description_cs1').val("<%= @cs1.nil? ? '' : @cs1.description %>")
+$('#terminology_cs2').select2("val", "<%= @cs2.nil? ? '' : @cs2.id %>");
+$('#description_cs2').val("<%= @cs2.nil? ? '' : @cs2.description %>")
+$('#terminology_cs3').select2("val", "<%= @cs3.nil? ? '' : @cs3.id %>");
+$('#description_cs3').val("<%= @cs3.nil? ? '' : @cs3.description %>")
 
-$('#code_ncs').val("<%= @ncs.code %>")
-$('#description_ncs').val("<%= @ncs.description %>")
-//$('#fee_schedule_ncs').val("<%= @ncs.charge %>")
+$('#terminology_ncs1').select2("val", "<%= @ncs1.nil? ? '' : @ncs1.id %>");
+$('#description_ncs1').val("<%= @ncs1.nil? ? '' : @ncs1.description %>")
+$('#terminology_ncs2').select2("val", "<%= @ncs2.nil? ? '' : @ncs2.id %>");
+$('#description_ncs2').val("<%= @ncs2.nil? ? '' : @ncs2.description %>")
+$('#terminology_ncs3').select2("val", "<%= @ncs3.nil? ? '' : @ncs3.id %>");
+$('#description_ncs3').val("<%= @ncs3.nil? ? '' : @ncs3.description %>")
 
+$('#fee_schedule_fcs1').val("<%= @fcs_charge1 %>")
+$('#fee_schedule_fcs2').val("<%= @fcs_charge2 %>")
+$('#fee_schedule_fcs3').val("<%= @fcs_charge3 %>")
+$('#units_fcs1').val("<%= @fcs_units1 %>")
+$('#units_fcs2').val("<%= @fcs_units2 %>")
+$('#units_fcs3').val("<%= @fcs_units3 %>")
+
+$('#fee_schedule_cs1').val("<%= @cs_charge1 %>")
+$('#fee_schedule_cs2').val("<%= @cs_charge2 %>")
+$('#fee_schedule_cs3').val("<%= @cs_charge3 %>")
+$('#units_cs1').val("<%= @cs_units1 %>")
+$('#units_cs2').val("<%= @cs_units2 %>")
+$('#units_cs3').val("<%= @cs_units3 %>")
+
+$('#fee_schedule_ncs1').val("<%= @ncs_charge1 %>")
+$('#fee_schedule_ncs2').val("<%= @ncs_charge2%>")
+$('#fee_schedule_ncs3').val("<%= @ncs_charge3 %>")
+$('#units_ncs1').val("<%= @ncs_units1 %>")
+$('#units_ncs2').val("<%= @ncs_units2 %>")
+$('#units_ncs3').val("<%= @ncs_units3 %>")

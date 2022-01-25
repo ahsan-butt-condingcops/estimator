@@ -2,23 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9f0e58f-85e6-4861-9256-e4a6f311aab0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/cost_estimates/populate_charges.js.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/cost_estimates/populate_terminology_fields.js.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/visit_templates/add_units.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20220119152314_add_units_to_template_terminologies.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20220120103343_add_fee_schedule_id_to_visit_templates.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.byebug_history" beforeDir="false" afterPath="$PROJECT_DIR$/.byebug_history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/cost_estimates_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cost_estimates_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/terminologies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/terminologies_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/terminology.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/terminology.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/visit_templates_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/visit_templates_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/visit_template.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/visit_template.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/cost_estimates/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cost_estimates/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cost_estimates/populate_charges.js.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cost_estimates/populate_charges.js.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/cost_estimates/populate_terminologies.js.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cost_estimates/populate_terminologies.js.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/terminologies/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/terminologies/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/visit_templates/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/visit_templates/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/1d/ac084335cc6889" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/1d/ac084335cc6889" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/9b/1162c51f948ac5" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/9b/1162c51f948ac5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/6f/601381a9123391" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/6f/601381a9123391" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/b2/24fb8a8c37fce9" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/b2/24fb8a8c37fce9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/bf/254c208916ba0a" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/bf/254c208916ba0a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/e5/57607767b81d86" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/compile-cache/e5/57607767b81d86" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap/load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap/load-path-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/pids/server.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="ERB File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -58,11 +71,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23V1JlvKhLAOnG19rN77iZkzcqI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Ruby.ViewRefParam.DefaultExtension" value="js.erb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -192,7 +209,9 @@
       <workItem from="1641895661583" duration="1477000" />
       <workItem from="1641898562188" duration="38008000" />
       <workItem from="1642159115943" duration="5248000" />
-      <workItem from="1642405530369" duration="12244000" />
+      <workItem from="1642405530369" duration="46764000" />
+      <workItem from="1643009729725" duration="220000" />
+      <workItem from="1643009965580" duration="17304000" />
     </task>
     <servers />
   </component>
@@ -209,5 +228,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

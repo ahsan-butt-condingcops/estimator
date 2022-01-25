@@ -1,5 +1,5 @@
 class VisitTemplatesController < ApplicationController
-  before_action :set_visit_template, only: %i[ show edit update destroy ]
+  before_action :set_visit_template, only: %i[ show edit update destroy add_units ]
 
   # GET /visit_templates or /visit_templates.json
   def index
@@ -13,12 +13,14 @@ class VisitTemplatesController < ApplicationController
   # GET /visit_templates/new
   def new
     @terminologies = Terminology.all
+    @fee_schedules = FeeSchedule.all
     @visit_template = VisitTemplate.new
   end
 
   # GET /visit_templates/1/edit
   def edit
     @terminologies = Terminology.all
+    @fee_schedules = FeeSchedule.all
   end
 
   # POST /visit_templates or /visit_templates.json
@@ -42,11 +44,22 @@ class VisitTemplatesController < ApplicationController
   def update
     respond_to do |format|
       if @visit_template.update(visit_template_params)
-        TemplateTerminology.where(visit_template_id: @visit_template.id).destroy_all
-        params[:terminologies].each do |tt|
-          TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: tt.to_i).first_or_create
+
+        unless params[:terminologies].nil?
+          # TemplateTerminology.where(visit_template_id: @visit_template.id).destroy_all
+          params[:terminologies].each do |tt|
+            unless TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: tt.to_i).exists?
+              TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: tt.to_i).first_or_create
+            end
+          end
         end
-        format.html { redirect_to visit_template_url(@visit_template), notice: "Visit template was successfully updated." }
+
+        if params[:visit_template][:template_terminologies_attributes].present?
+          format.html { redirect_to visit_template_url(@visit_template), notice: "Visit template was successfully updated." }
+        else
+          format.html { redirect_to visit_template_add_units_path(id: @visit_template.id, visit_template_id: @visit_template.id), notice: "Visit template was successfully updated." }
+        end
+
         format.json { render :show, status: :ok, location: @visit_template }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +78,10 @@ class VisitTemplatesController < ApplicationController
     end
   end
 
+  def add_units
+    # debugger
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_visit_template
@@ -73,6 +90,6 @@ class VisitTemplatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def visit_template_params
-      params.require(:visit_template).permit(:name)
+      params.require(:visit_template).permit(:name, :fee_schedule_id, template_terminologies_attributes: [:terminology_id, :units, :id])
     end
 end

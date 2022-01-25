@@ -46,19 +46,75 @@
   <legend>Fully Covered Services</legend>
   <p>
     <label for="code_fcs">Procedure</label>
-    <input type="text" name="code" id="code_fcs" >
+    <%= select_tag :terminology_id, options_for_select(@terminologies_fcs.map { |s| [s.code, s.id] }), id: 'terminology_fcs1'%>
 
     <label for="description_fcs">Description</label>
-    <input type="text" name="description" id="description_fcs" >
+    <input type="text" name="description" id="description_fcs1" >
 
     <label for="fee_schedule_fcs">Fee Schedule</label>
-    <input type="text" name="fee_schedule" id="fee_schedule_fcs" >
+    <input type="text" name="fee_schedule" id="fee_schedule_fcs1" >
 
     <label for="units_fcs">Units</label>
-    <input type="text" name="units" id="units_fcs" >
+    <input type="text" name="units" id="units_fcs1" >
 
     <label for="total_fcs">Total</label>
-    <input type="text" name="total" id="total_fcs" >
+    <input type="text" name="total" id="total_fcs1" >
+  </p>
+
+  <p>
+    <label for="code_fcs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_fcs.map { |s| [s.code, s.id] }), id: 'terminology_fcs2'%>
+
+    <label for="description_fcs">Description</label>
+    <input type="text" name="description" id="description_fcs2" >
+
+    <label for="fee_schedule_fcs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_fcs2" >
+
+    <label for="units_fcs">Units</label>
+    <input type="text" name="units" id="units_fcs2" >
+
+    <label for="total_fcs">Total</label>
+    <input type="text" name="total" id="total_fcs2" >
+  </p>
+
+  <p>
+    <label for="code_fcs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_fcs.map { |s| [s.code, s.id] }), id: 'terminology_fcs3'%>
+
+    <label for="description_fcs">Description</label>
+    <input type="text" name="description" id="description_fcs3" >
+
+    <label for="fee_schedule_fcs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_fcs3" >
+
+    <label for="units_fcs">Units</label>
+    <input type="text" name="units" id="units_fcs3" >
+
+    <label for="total_fcs">Total</label>
+    <input type="text" name="total" id="total_fcs3" >
+  </p>
+
+  <p>
+    <label for="code_fcs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_fcs.map { |s| [s.code, s.id] }), id: 'terminology_fcs4'%>
+
+    <label for="description_fcs">Description</label>
+    <input type="text" name="description" id="description_fcs4" >
+
+    <label for="fee_schedule_fcs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_fcs4" >
+
+    <label for="units_fcs">Units</label>
+    <input type="text" name="units" id="units_fcs4" >
+
+    <label for="total_fcs">Total</label>
+    <input type="text" name="total" id="total_fcs4" >
+  </p>
+
+  <p style="text-align: right; margin-right: 149px">
+    <label for="total_fcs">SubTotal</label>
+    <input type="text" name="total" id="subtotal_fcs" >
   </p>
 </fieldset>
 
@@ -66,19 +122,75 @@
   <legend>Covered Services</legend>
   <p>
     <label for="code_cs">Procedure</label>
-    <input type="text" name="code" id="code_cs" >
+    <%= select_tag :terminology_id, options_for_select(@terminologies_cs.map { |s| [s.code, s.id] }), id: 'terminology_cs1'%>
 
     <label for="description_cs">Description</label>
-    <input type="text" name="description" id="description_cs" >
+    <input type="text" name="description" id="description_cs1" >
 
     <label for="fee_schedule_cs">Fee Schedule</label>
-    <input type="text" name="fee_schedule" id="fee_schedule_cs" >
+    <input type="text" name="fee_schedule" id="fee_schedule_cs1" >
 
     <label for="units_cs">Units</label>
-    <input type="text" name="units" id="units_cs" >
+    <input type="text" name="units" id="units_cs1" >
 
     <label for="total_cs">Total</label>
-    <input type="text" name="total" id="total_cs" >
+    <input type="text" name="total" id="total_cs1" >
+  </p>
+
+  <p>
+    <label for="code_cs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_cs.map { |s| [s.code, s.id] }), id: 'terminology_cs2'%>
+
+    <label for="description_cs">Description</label>
+    <input type="text" name="description" id="description_cs2" >
+
+    <label for="fee_schedule_cs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_cs2" >
+
+    <label for="units_cs">Units</label>
+    <input type="text" name="units" id="units_cs2" >
+
+    <label for="total_cs">Total</label>
+    <input type="text" name="total" id="total_cs2" >
+  </p>
+
+  <p>
+    <label for="code_cs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_cs.map { |s| [s.code, s.id] }), id: 'terminology_cs3'%>
+
+    <label for="description_cs">Description</label>
+    <input type="text" name="description" id="description_cs3" >
+
+    <label for="fee_schedule_cs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_cs3" >
+
+    <label for="units_cs">Units</label>
+    <input type="text" name="units" id="units_cs3" >
+
+    <label for="total_cs">Total</label>
+    <input type="text" name="total" id="total_cs3" >
+  </p>
+
+  <p>
+    <label for="code_cs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_cs.map { |s| [s.code, s.id] }), id: 'terminology_cs4'%>
+
+    <label for="description_cs">Description</label>
+    <input type="text" name="description" id="description_cs4" >
+
+    <label for="fee_schedule_cs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_cs4" >
+
+    <label for="units_cs">Units</label>
+    <input type="text" name="units" id="units_cs4" >
+
+    <label for="total_cs">Total</label>
+    <input type="text" name="total" id="total_cs4" >
+  </p>
+
+  <p style="text-align: right; margin-right: 149px">
+    <label for="total_fcs">SubTotal</label>
+    <input type="text" name="total" id="subtotal_cs" >
   </p>
 </fieldset>
 
@@ -86,19 +198,75 @@
   <legend>Non-Covered Services</legend>
   <p>
     <label for="code_ncs">Procedure</label>
-    <input type="text" name="code" id="code_ncs" >
+    <%= select_tag :terminology_id, options_for_select(@terminologies_ncs.map { |s| [s.code, s.id] }), id: 'terminology_ncs1'%>
 
     <label for="description_ncs">Description</label>
-    <input type="text" name="description" id="description_ncs" >
+    <input type="text" name="description" id="description_ncs1" >
 
     <label for="fee_schedule_ncs">Fee Schedule</label>
-    <input type="text" name="fee_schedule" id="fee_schedule_ncs" >
+    <input type="text" name="fee_schedule" id="fee_schedule_ncs1" >
 
     <label for="units_ncs">Units</label>
-    <input type="text" name="units" id="units_ncs" >
+    <input type="text" name="units" id="units_ncs1" >
 
     <label for="total_ncs">Total</label>
-    <input type="text" name="total" id="total_ncs" >
+    <input type="text" name="total" id="total_ncs1" >
+  </p>
+
+  <p>
+    <label for="code_ncs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_ncs.map { |s| [s.code, s.id] }), id: 'terminology_ncs2'%>
+
+    <label for="description_ncs">Description</label>
+    <input type="text" name="description" id="description_ncs2" >
+
+    <label for="fee_schedule_ncs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_ncs2" >
+
+    <label for="units_ncs">Units</label>
+    <input type="text" name="units" id="units_ncs2" >
+
+    <label for="total_ncs">Total</label>
+    <input type="text" name="total" id="total_ncs2" >
+  </p>
+
+  <p>
+    <label for="code_ncs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_ncs.map { |s| [s.code, s.id] }), id: 'terminology_ncs3'%>
+
+    <label for="description_ncs">Description</label>
+    <input type="text" name="description" id="description_ncs3" >
+
+    <label for="fee_schedule_ncs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_ncs3" >
+
+    <label for="units_ncs">Units</label>
+    <input type="text" name="units" id="units_ncs3" >
+
+    <label for="total_ncs">Total</label>
+    <input type="text" name="total" id="total_ncs3" >
+  </p>
+
+  <p>
+    <label for="code_ncs">Procedure</label>
+    <%= select_tag :terminology_id, options_for_select(@terminologies_ncs.map { |s| [s.code, s.id] }), id: 'terminology_ncs4'%>
+
+    <label for="description_ncs">Description</label>
+    <input type="text" name="description" id="description_ncs4" >
+
+    <label for="fee_schedule_ncs">Fee Schedule</label>
+    <input type="text" name="fee_schedule" id="fee_schedule_ncs4" >
+
+    <label for="units_ncs">Units</label>
+    <input type="text" name="units" id="units_ncs4" >
+
+    <label for="total_ncs">Total</label>
+    <input type="text" name="total" id="total_ncs4" >
+  </p>
+
+  <p style="text-align: right; margin-right: 149px">
+    <label for="total_fcs">SubTotal</label>
+    <input type="text" name="total" id="subtotal_ncs" >
   </p>
 </fieldset>
 
@@ -134,6 +302,8 @@
 
 <%= button_to "Do Estimate"%>
 
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script type="text/javascript">
     // $('#cost_estimate_visit_template_id').change(alert_me_test);
     $('#visit_template_id').change(function(){
@@ -142,58 +312,163 @@
             type: "GET",
             data: {visit_template_id: $('#visit_template_id option:selected').val()},
         })
+        setTimeout(function() {
+            $('#units_fcs1').trigger("change");
+            $('#units_fcs2').trigger("change");
+            $('#units_fcs3').trigger("change");
+            $('#units_fcs4').trigger("change");
+
+            $('#units_cs1').trigger("change");
+            $('#units_cs2').trigger("change");
+            $('#units_cs3').trigger("change");
+            $('#units_cs4').trigger("change");
+
+            $('#units_ncs1').trigger("change");
+            $('#units_ncs2').trigger("change");
+            $('#units_ncs3').trigger("change");
+            $('#units_ncs4').trigger("change");
+        }, 1000);
+
     });
 
     $('#fee_schedule_id').change(function(){
-        $.ajax({
-            url: "populate_charges",
-            type: "GET",
-            data: {visit_template_id: $('#visit_template_id option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-        })
+        if ($('#visit_template_id option:selected').val().length > 0) {
+            $.ajax({
+                url: "populate_charges",
+                type: "GET",
+                data: {visit_template_id: $('#visit_template_id option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }
     });
 
-
-    $('#units_fcs').on('keyup change', function (){
-        $('#total_fcs').val($('#units_fcs').val() * $('#fee_schedule_fcs').val())
-        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    $('#units_fcs1, #fee_schedule_fcs1').on('keyup change', function (){
+        var total_fcs1 = Number($('#units_fcs1').val()) * Number($('#fee_schedule_fcs1').val())
+        var total_fcs2 = Number($('#units_fcs2').val()) * Number($('#fee_schedule_fcs2').val())
+        var total_fcs3 = Number($('#units_fcs3').val()) * Number($('#fee_schedule_fcs3').val())
+        var total_fcs4 = Number($('#units_fcs4').val()) * Number($('#fee_schedule_fcs4').val())
+        $('#total_fcs1').val(total_fcs1)
+        $('#subtotal_fcs').val(total_fcs1+total_fcs2+total_fcs3+total_fcs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
     });
 
-    $('#fee_schedule_fcs').on('keyup change', function (){
-        $('#total_fcs').val($('#units_fcs').val() * $('#fee_schedule_fcs').val())
-        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    $('#units_fcs2, #fee_schedule_fcs2').on('keyup change', function (){
+        var total_fcs1 = Number($('#units_fcs1').val()) * Number($('#fee_schedule_fcs1').val())
+        var total_fcs2 = Number($('#units_fcs2').val()) * Number($('#fee_schedule_fcs2').val())
+        var total_fcs3 = Number($('#units_fcs3').val()) * Number($('#fee_schedule_fcs3').val())
+        var total_fcs4 = Number($('#units_fcs4').val()) * Number($('#fee_schedule_fcs4').val())
+        $('#total_fcs2').val(total_fcs2)
+        $('#subtotal_fcs').val(total_fcs1+total_fcs2+total_fcs3+total_fcs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
     });
 
-
-    $('#units_cs').on('keyup change', function (){
-        $('#total_cs').val($('#units_cs').val() * $('#fee_schedule_cs').val())
-        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    $('#units_fcs3, #fee_schedule_fcs3').on('keyup change', function (){
+        var total_fcs1 = Number($('#units_fcs1').val()) * Number($('#fee_schedule_fcs1').val())
+        var total_fcs2 = Number($('#units_fcs2').val()) * Number($('#fee_schedule_fcs2').val())
+        var total_fcs3 = Number($('#units_fcs3').val()) * Number($('#fee_schedule_fcs3').val())
+        var total_fcs4 = Number($('#units_fcs4').val()) * Number($('#fee_schedule_fcs4').val())
+        $('#total_fcs3').val(total_fcs3)
+        $('#subtotal_fcs').val(total_fcs1+total_fcs2+total_fcs3+total_fcs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
     });
 
-    $('#fee_schedule_cs').on('keyup change', function (){
-        $('#total_cs').val($('#units_cs').val() * $('#fee_schedule_cs').val())
-        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    $('#units_fcs4, #fee_schedule_fcs4').on('keyup change', function (){
+        var total_fcs1 = Number($('#units_fcs1').val()) * Number($('#fee_schedule_fcs1').val())
+        var total_fcs2 = Number($('#units_fcs2').val()) * Number($('#fee_schedule_fcs2').val())
+        var total_fcs3 = Number($('#units_fcs3').val()) * Number($('#fee_schedule_fcs3').val())
+        var total_fcs4 = Number($('#units_fcs4').val()) * Number($('#fee_schedule_fcs4').val())
+        $('#total_fcs4').val(total_fcs4)
+        $('#subtotal_fcs').val(total_fcs1+total_fcs2+total_fcs3+total_fcs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
     });
 
-
-    $('#units_ncs').on('keyup change', function (){
-        $('#total_ncs').val($('#units_ncs').val() * $('#fee_schedule_ncs').val())
-        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    $('#units_cs1, #fee_schedule_cs1').on('keyup change', function (){
+        var total_cs1 = Number($('#units_cs1').val()) * Number($('#fee_schedule_cs1').val())
+        var total_cs2 = Number($('#units_cs2').val()) * Number($('#fee_schedule_cs2').val())
+        var total_cs3 = Number($('#units_cs3').val()) * Number($('#fee_schedule_cs3').val())
+        var total_cs4 = Number($('#units_cs4').val()) * Number($('#fee_schedule_cs4').val())
+        $('#total_cs1').val(total_cs1)
+        $('#subtotal_cs').val(total_cs1+total_cs2+total_cs3+total_cs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
     });
 
-    $('#fee_schedule_ncs').on('keyup change', function (){
-        $('#total_ncs').val($('#units_ncs').val() * $('#fee_schedule_ncs').val())
-        $('#total_cost').val(parseFloat($('#total_fcs').val()) + parseFloat($('#total_cs').val()) + parseFloat($('#total_ncs').val()))
+    $('#units_cs2, #fee_schedule_cs2').on('keyup change', function (){
+        var total_cs1 = Number($('#units_cs1').val()) * Number($('#fee_schedule_cs1').val())
+        var total_cs2 = Number($('#units_cs2').val()) * Number($('#fee_schedule_cs2').val())
+        var total_cs3 = Number($('#units_cs3').val()) * Number($('#fee_schedule_cs3').val())
+        var total_cs4 = Number($('#units_cs4').val()) * Number($('#fee_schedule_cs4').val())
+        $('#total_cs2').val(total_cs2)
+        $('#subtotal_cs').val(total_cs1+total_cs2+total_cs3+total_cs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
+    });
+
+    $('#units_cs3, #fee_schedule_cs3').on('keyup change', function (){
+        var total_cs1 = Number($('#units_cs1').val()) * Number($('#fee_schedule_cs1').val())
+        var total_cs2 = Number($('#units_cs2').val()) * Number($('#fee_schedule_cs2').val())
+        var total_cs3 = Number($('#units_cs3').val()) * Number($('#fee_schedule_cs3').val())
+        var total_cs4 = Number($('#units_cs4').val()) * Number($('#fee_schedule_cs4').val())
+        $('#total_cs3').val(total_cs3)
+        $('#subtotal_cs').val(total_cs1+total_cs2+total_cs3+total_cs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
+    });
+
+    $('#units_cs4, #fee_schedule_cs4').on('keyup change', function (){
+        var total_cs1 = Number($('#units_cs1').val()) * Number($('#fee_schedule_cs1').val())
+        var total_cs2 = Number($('#units_cs2').val()) * Number($('#fee_schedule_cs2').val())
+        var total_cs3 = Number($('#units_cs3').val()) * Number($('#fee_schedule_cs3').val())
+        var total_cs4 = Number($('#units_cs4').val()) * Number($('#fee_schedule_cs4').val())
+        $('#total_cs4').val(total_cs4)
+        $('#subtotal_cs').val(total_cs1+total_cs2+total_cs3+total_cs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
+    });
+
+    $('#units_ncs1, #fee_schedule_ncs1').on('keyup change', function (){
+        var total_ncs1 = Number($('#units_fcs1').val()) * Number($('#fee_schedule_fcs1').val())
+        var total_ncs2 = Number($('#units_fcs2').val()) * Number($('#fee_schedule_fcs2').val())
+        var total_ncs3 = Number($('#units_fcs3').val()) * Number($('#fee_schedule_fcs3').val())
+        var total_ncs4 = Number($('#units_fcs4').val()) * Number($('#fee_schedule_fcs4').val())
+        $('#total_ncs1').val(total_ncs1)
+        $('#subtotal_ncs').val(total_ncs1+total_ncs2+total_ncs3+total_ncs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
+    });
+
+    $('#units_ncs2, #fee_schedule_ncs2').on('keyup change', function (){
+        var total_ncs1 = Number($('#units_ncs1').val()) * Number($('#fee_schedule_ncs1').val())
+        var total_ncs2 = Number($('#units_ncs2').val()) * Number($('#fee_schedule_ncs2').val())
+        var total_ncs3 = Number($('#units_ncs3').val()) * Number($('#fee_schedule_ncs3').val())
+        var total_ncs4 = Number($('#units_ncs4').val()) * Number($('#fee_schedule_ncs4').val())
+        $('#total_ncs2').val(total_ncs2)
+        $('#subtotal_ncs').val(total_ncs1+total_ncs2+total_ncs3+total_ncs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
+    });
+
+    $('#units_ncs3, #fee_schedule_ncs3').on('keyup change', function (){
+        var total_ncs1 = Number($('#units_ncs1').val()) * Number($('#fee_schedule_ncs1').val())
+        var total_ncs2 = Number($('#units_ncs2').val()) * Number($('#fee_schedule_ncs2').val())
+        var total_ncs3 = Number($('#units_ncs3').val()) * Number($('#fee_schedule_ncs3').val())
+        var total_ncs4 = Number($('#units_ncs4').val()) * Number($('#fee_schedule_ncs4').val())
+        $('#total_ncs3').val(total_ncs3)
+        $('#subtotal_ncs').val(total_ncs1+total_ncs2+total_ncs3+total_ncs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
+    });
+
+    $('#units_ncs4, #fee_schedule_ncs4').on('keyup change', function (){
+        var total_ncs1 = Number($('#units_ncs1').val()) * Number($('#fee_schedule_ncs1').val())
+        var total_ncs2 = Number($('#units_ncs2').val()) * Number($('#fee_schedule_ncs2').val())
+        var total_ncs3 = Number($('#units_ncs3').val()) * Number($('#fee_schedule_ncs3').val())
+        var total_ncs4 = Number($('#units_ncs4').val()) * Number($('#fee_schedule_ncs4').val())
+        $('#total_ncs4').val(total_ncs4)
+        $('#subtotal_ncs').val(total_ncs1+total_ncs2+total_ncs3+total_ncs4)
+        $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
     });
 
     $("input[value='Do Estimate']").click(function(e) {
         e.preventDefault();
-
-        var out_of_pocket_max_balance = parseFloat($('#out_of_pocket_max_balance').val());
-        var copay = parseFloat($('#copay').val());
-        var coins = parseFloat($('#coins').val());
-        var deductible_balance = parseFloat($('#deductible_balance').val());
-        var total_cs = parseFloat($('#total_cs').val());
-        var total_ncs = parseFloat($('#total_ncs').val());
+        var out_of_pocket_max_balance = Number($('#out_of_pocket_max_balance').val());
+        var copay = Number($('#copay').val());
+        var coins = Number($('#coins').val());
+        var deductible_balance = Number($('#deductible_balance').val());
+        var total_cs = Number($('#total_cs').val());
+        var total_ncs = Number($('#total_ncs').val());
         var patient_copay = 0;
         var patient_deductible = 0;
         var patient_coins = 0;
@@ -220,8 +495,25 @@
         var total_out_of_pocket_estimate = patient_copay+patient_deductible+patient_coins+total_ncs
         $('#patient_total_out_of_pocket_estimate').val(total_out_of_pocket_estimate)
 
-        var total_cost = parseFloat($('#total_cost').val());
+        var total_cost = Number($('#total_cost').val());
         $('#insurance_pays').val(total_cost-total_out_of_pocket_estimate)
+    });
+
+    $('#terminology_fcs1').on("select2:selecting", function(e) {
+        $.ajax({
+            url: "populate_terminology_fields",
+            type: "GET",
+            data: {terminology_id: $('#terminology_fcs1 option:selected').val()},
+        })
+    });
+
+    $(document).ready(function() {
+        $('#terminology_fcs1, #terminology_fcs2, #terminology_fcs3, #terminology_fcs4').select2();
+        $('#terminology_fcs1, #terminology_fcs2, #terminology_fcs3, #terminology_fcs4').prepend('<option/>').val(function(){return $('[selected]',this).val() ;})
+        $('#terminology_cs1, #terminology_cs2, #terminology_cs3, #terminology_cs4').select2();
+        $('#terminology_cs1, #terminology_cs2, #terminology_cs3, #terminology_cs4').prepend('<option/>').val(function(){return $('[selected]',this).val() ;})
+        $('#terminology_ncs1, #terminology_ncs2, #terminology_ncs3, #terminology_ncs4').select2();
+        $('#terminology_ncs1, #terminology_ncs2, #terminology_ncs3, #terminology_ncs4').prepend('<option/>').val(function(){return $('[selected]',this).val() ;})
     });
 
 </script>

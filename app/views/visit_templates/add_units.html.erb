@@ -1,0 +1,15 @@
+<h1>Add Units for CPTs for <%= @visit_template.name %></h1>
+
+<%= form_for @visit_template, action: 'update_units' do |f| %>
+  <%= f.fields_for :template_terminologies, @visit_template.template_terminologies do |tt| %>
+    <%# debugger %>
+    <label>Units for <%= Terminology.find(tt.object.terminology_id.to_i).code %></label>
+    <%= tt.text_field :units %><br/>
+
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %><br/>
+    <%= link_to "Back", '/visit_templates' %>
+  </div>
+<% end %>

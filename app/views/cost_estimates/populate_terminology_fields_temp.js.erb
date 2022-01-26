@@ -1,0 +1,19 @@
+<% if @terminology.coverage_type == 'Fully Covered Service' %>
+  next_available =  $('#next_available_fcs').val()
+  $('#next_available_fcs').val( Number($('#next_available_fcs').val()) + 1)
+  $('#terminology_fcs' + next_available).select2("val", "<%= @terminology.nil? ? '' : @terminology.id %>");
+  $('#description_fcs' + next_available).val("<%= @terminology.description %>")
+  $('#fee_schedule_fcs' + next_available).val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology.coverage_type == 'Covered Service'%>
+  next_available =  $('#next_available_cs').val()
+  $('#next_available_cs').val( Number($('#next_available_cs').val()) + 1)
+  $('#terminology_cs' + next_available).select2("val", "<%= @terminology.nil? ? '' : @terminology.id %>");
+  $('#description_cs' + next_available).val("<%= @terminology.description %>")
+  $('#fee_schedule_cs' + next_available).val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology.coverage_type == 'Non-Covered Service'%>
+  next_available =  $('#next_available_ncs').val()
+  $('#next_available_ncs').val( Number($('#next_available_ncs').val()) + 1)
+  $('#terminology_ncs' + next_available).select2("val", "<%= @terminology.nil? ? '' : @terminology.id %>");
+  $('#description_ncs' + next_available).val("<%= @terminology.description %>")
+  $('#fee_schedule_ncs' + next_available).val("<%= @terminology_fee_schedule.value %>")
+<% end %>

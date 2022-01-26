@@ -54,3 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'awesome_print', :require => 'ap'
+gem 'jquery-rails'
+gem 'bootstrap-sass'

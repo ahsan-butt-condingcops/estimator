@@ -40,10 +40,18 @@
   <label>Fee Schedule</label>
   <%= select_tag :fee_schedule_id, options_for_select(@fee_schedules.map { |s| [s.name, s.id] }), { :include_blank => true} %>
 </div>
+
+<div class="field">
+  <label for="code_fcs">Add Procedure</label>
+  <%= select_tag :add_terminology_id, options_for_select(@terminologies.map { |s| [s.code + '(' + s.description + ')', s.id] }), id: 'add_terminology_id'%>
+
+</div>
+
 <br/>
 
 <fieldset>
   <legend>Fully Covered Services</legend>
+  <input type="text" id="next_available_fcs">
   <p>
     <label for="code_fcs">Procedure</label>
     <%= select_tag :terminology_id, options_for_select(@terminologies_fcs.map { |s| [s.code, s.id] }), id: 'terminology_fcs1'%>
@@ -120,6 +128,7 @@
 
 <fieldset>
   <legend>Covered Services</legend>
+  <input type="text" id="next_available_cs">
   <p>
     <label for="code_cs">Procedure</label>
     <%= select_tag :terminology_id, options_for_select(@terminologies_cs.map { |s| [s.code, s.id] }), id: 'terminology_cs1'%>
@@ -196,6 +205,7 @@
 
 <fieldset>
   <legend>Non-Covered Services</legend>
+  <input type="text" id="next_available_ncs">
   <p>
     <label for="code_ncs">Procedure</label>
     <%= select_tag :terminology_id, options_for_select(@terminologies_ncs.map { |s| [s.code, s.id] }), id: 'terminology_ncs1'%>
@@ -300,13 +310,21 @@
   </p>
 </fieldset>
 
-<%= button_to "Do Estimate"%>
+<%= button_to 'Create Template' %>
+<div id="create_template_name">
+  <label for="new_template_name">Template Name</label>
+  <input type="text" name="new_template_name" id="new_template_name" >
+  <%= button_to "Create Template Now" %>
+</div>
+<%= button_to 'Update Template' %>
+<%= button_to 'Do Estimate' %>
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script type="text/javascript">
-    // $('#cost_estimate_visit_template_id').change(alert_me_test);
     $('#visit_template_id').change(function(){
+        $("input[value='Create Template']").hide();
+        $("input[value='Update Template']").show();
         $.ajax({
             url: "populate_terminologies",
             type: "GET",
@@ -422,10 +440,10 @@
     });
 
     $('#units_ncs1, #fee_schedule_ncs1').on('keyup change', function (){
-        var total_ncs1 = Number($('#units_fcs1').val()) * Number($('#fee_schedule_fcs1').val())
-        var total_ncs2 = Number($('#units_fcs2').val()) * Number($('#fee_schedule_fcs2').val())
-        var total_ncs3 = Number($('#units_fcs3').val()) * Number($('#fee_schedule_fcs3').val())
-        var total_ncs4 = Number($('#units_fcs4').val()) * Number($('#fee_schedule_fcs4').val())
+        var total_ncs1 = Number($('#units_ncs1').val()) * Number($('#fee_schedule_ncs1').val())
+        var total_ncs2 = Number($('#units_ncs2').val()) * Number($('#fee_schedule_ncs2').val())
+        var total_ncs3 = Number($('#units_ncs3').val()) * Number($('#fee_schedule_ncs3').val())
+        var total_ncs4 = Number($('#units_ncs4').val()) * Number($('#fee_schedule_ncs4').val())
         $('#total_ncs1').val(total_ncs1)
         $('#subtotal_ncs').val(total_ncs1+total_ncs2+total_ncs3+total_ncs4)
         $('#total_cost').val(Number($('#subtotal_fcs').val()) + Number($('#subtotal_cs').val()) + Number($('#subtotal_ncs').val()))
@@ -500,14 +518,121 @@
     });
 
     $('#terminology_fcs1').on("select2:selecting", function(e) {
-        $.ajax({
+        setTimeout(function() {
+            $.ajax({
             url: "populate_terminology_fields",
             type: "GET",
-            data: {terminology_id: $('#terminology_fcs1 option:selected').val()},
+            data: {terminology_type: 'fcs1', terminology_id: $('#terminology_fcs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
         })
+        }, 500);
     });
 
+    $('#terminology_fcs2').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'fcs2', terminology_id: $('#terminology_fcs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $('#terminology_fcs3').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'fcs3', terminology_id: $('#terminology_fcs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $('#terminology_cs1').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'cs1', terminology_id: $('#terminology_cs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $('#terminology_cs2').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'cs2', terminology_id: $('#terminology_cs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $('#terminology_cs3').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'cs3', terminology_id: $('#terminology_cs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $('#terminology_ncs1').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'ncs1', terminology_id: $('#terminology_ncs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $('#terminology_ncs2').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'ncs2', terminology_id: $('#terminology_ncs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $('#terminology_ncs3').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields",
+                type: "GET",
+                data: {terminology_type: 'ncs3', terminology_id: $('#terminology_ncs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+    $("input[value='Create Template']").click(function(e) {
+        e.preventDefault();
+        $("input[value='Create Template']").hide();
+        $('#create_template_name').show();
+    });
+
+
+    $('#add_terminology_id').on("select2:selecting", function(e) {
+        setTimeout(function() {
+            $.ajax({
+                url: "populate_terminology_fields_temp",
+                type: "GET",
+                data: {terminology_id: $('#add_terminology_id option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+            })
+        }, 500);
+    });
+
+
     $(document).ready(function() {
+        $('#next_available_fcs').val(1);
+        $('#next_available_cs').val(1);
+        $('#next_available_ncs').val(1);
+        $("input[value='Update Template']").hide();
+        $('#create_template_name').hide();
+        $('#add_terminology_id').select2();
+        $('#add_terminology_id').prepend('<option/>').val(function(){return $('[selected]',this).val() ;})
         $('#terminology_fcs1, #terminology_fcs2, #terminology_fcs3, #terminology_fcs4').select2();
         $('#terminology_fcs1, #terminology_fcs2, #terminology_fcs3, #terminology_fcs4').prepend('<option/>').val(function(){return $('[selected]',this).val() ;})
         $('#terminology_cs1, #terminology_cs2, #terminology_cs3, #terminology_cs4').select2();

@@ -1,2 +1,28 @@
+<% if @terminology_type == 'fcs1' %>
 $('#description_fcs1').val("<%= @terminology.description %>")
 $('#fee_schedule_fcs1').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'fcs2' %>
+$('#description_fcs2').val("<%= @terminology.description %>")
+$('#fee_schedule_fcs2').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'fcs3' %>
+$('#description_fcs3').val("<%= @terminology.description %>")
+$('#fee_schedule_fcs3').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'cs1' %>
+$('#description_cs1').val("<%= @terminology.description %>")
+$('#fee_schedule_cs1').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'cs2' %>
+$('#description_cs2').val("<%= @terminology.description %>")
+$('#fee_schedule_cs2').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'cs3' %>
+$('#description_cs3').val("<%= @terminology.description %>")
+$('#fee_schedule_cs3').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'ncs1' %>
+$('#description_ncs1').val("<%= @terminology.description %>")
+$('#fee_schedule_ncs1').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'ncs2' %>
+$('#description_ncs2').val("<%= @terminology.description %>")
+$('#fee_schedule_ncs2').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'ncs3' %>
+$('#description_ncs3').val("<%= @terminology.description %>")
+$('#fee_schedule_ncs3').val("<%= @terminology_fee_schedule.value %>")
+<% end %>

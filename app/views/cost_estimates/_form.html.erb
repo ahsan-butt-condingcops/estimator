@@ -51,7 +51,7 @@
 
 <fieldset>
   <legend>Fully Covered Services</legend>
-  <input type="text" id="next_available_fcs">
+  <input type="text" id="next_available_fcs", hidden>
   <p>
     <label for="code_fcs">Procedure</label>
     <%= select_tag :terminology_id, options_for_select(@terminologies_fcs.map { |s| [s.code, s.id] }), id: 'terminology_fcs1'%>
@@ -128,7 +128,7 @@
 
 <fieldset>
   <legend>Covered Services</legend>
-  <input type="text" id="next_available_cs">
+  <input type="text" id="next_available_cs", hidden>
   <p>
     <label for="code_cs">Procedure</label>
     <%= select_tag :terminology_id, options_for_select(@terminologies_cs.map { |s| [s.code, s.id] }), id: 'terminology_cs1'%>
@@ -205,7 +205,7 @@
 
 <fieldset>
   <legend>Non-Covered Services</legend>
-  <input type="text" id="next_available_ncs">
+  <input type="text" id="next_available_ncs", hidden>
   <p>
     <label for="code_ncs">Procedure</label>
     <%= select_tag :terminology_id, options_for_select(@terminologies_ncs.map { |s| [s.code, s.id] }), id: 'terminology_ncs1'%>

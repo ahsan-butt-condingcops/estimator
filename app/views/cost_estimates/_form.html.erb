@@ -350,13 +350,25 @@
     });
 
     $('#fee_schedule_id').change(function(){
-        if ($('#visit_template_id option:selected').val().length > 0) {
+        // if ($('#visit_template_id option:selected').val().length > 0) {
             $.ajax({
                 url: "populate_charges",
                 type: "GET",
-                data: {visit_template_id: $('#visit_template_id option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                data: {
+                    visit_template_id: $('#visit_template_id option:selected').val(),
+                    fee_schedule_id: $('#fee_schedule_id option:selected').val(),
+                    terminology_fcs1: $('#terminology_fcs1 option:selected').val(),
+                    terminology_fcs2: $('#terminology_fcs2 option:selected').val(),
+                    terminology_fcs3: $('#terminology_fcs3 option:selected').val(),
+                    terminology_cs1: $('#terminology_cs1 option:selected').val(),
+                    terminology_cs2: $('#terminology_cs2 option:selected').val(),
+                    terminology_cs3: $('#terminology_cs3 option:selected').val(),
+                    terminology_ncs1: $('#terminology_ncs1 option:selected').val(),
+                    terminology_ncs2: $('#terminology_ncs2 option:selected').val(),
+                    terminology_ncs3: $('#terminology_ncs3 option:selected').val(),
+                }
             })
-        }
+        // }
     });
 
     $('#units_fcs1, #fee_schedule_fcs1').on('keyup change', function (){

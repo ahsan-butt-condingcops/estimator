@@ -71,7 +71,8 @@ class CostEstimatesController < ApplicationController
 
       @template_terminologies = TemplateTerminology.where(visit_template_id: params[:visit_template_id].to_i)
       @terminologies = Terminology.where(id: @template_terminologies.pluck(:terminology_id))
-      @fee_schedule = VisitTemplate.find(params[:visit_template_id].to_i)
+      @fee_schedule = VisitTemplate.find(params[:visit_template_id].to_i).fee_schedule_id
+      # @fee_schedule = VisitTemplate.find(params[:visit_template_id].to_i)
 
       @fcs1 = @terminologies.where(coverage_type: 'Fully Covered Service').first
       @fcs2 = @terminologies.where(coverage_type: 'Fully Covered Service').second
@@ -88,7 +89,7 @@ class CostEstimatesController < ApplicationController
       if @terminologies.where(coverage_type: 'Fully Covered Service').count > 0
         @fcs_charge1 = TerminologyFeeSchedule.where(
           terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').first.id,
-          fee_schedule_id: @fee_schedule.id).first.value
+          fee_schedule_id: @fee_schedule).first.value
         @fcs_units1 = TemplateTerminology.where(
           terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').first.id,
           visit_template_id: params[:visit_template_id].to_i
@@ -98,7 +99,7 @@ class CostEstimatesController < ApplicationController
         if (@fcs_charge1 > 0 && @terminologies.where(coverage_type: 'Fully Covered Service').count > 1)
           @fcs_charge2 = TerminologyFeeSchedule.where(
             terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').second.id,
-            fee_schedule_id: @fee_schedule.id).first.value
+            fee_schedule_id: @fee_schedule).first.value
           @fcs_units2 = TemplateTerminology.where(
             terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').second.id,
             visit_template_id: params[:visit_template_id].to_i
@@ -108,7 +109,7 @@ class CostEstimatesController < ApplicationController
           if (@fcs_charge2 > 0 && @terminologies.where(coverage_type: 'Fully Covered Service').count > 2)
             @fcs_charge3 = TerminologyFeeSchedule.where(
               terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').third.id,
-              fee_schedule_id: @fee_schedule.id).first.value
+              fee_schedule_id: @fee_schedule).first.value
             @fcs_units3 = TemplateTerminology.where(
               terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').third.id,
               visit_template_id: params[:visit_template_id].to_i
@@ -121,7 +122,7 @@ class CostEstimatesController < ApplicationController
       if @terminologies.where(coverage_type: 'Covered Service').count > 0
         @cs_charge1 = TerminologyFeeSchedule.where(
           terminology_id: @terminologies.where(coverage_type: 'Covered Service').first.id,
-          fee_schedule_id: @fee_schedule.id).first.value
+          fee_schedule_id: @fee_schedule).first.value
         @cs_units1 = TemplateTerminology.where(
           terminology_id: @terminologies.where(coverage_type: 'Covered Service').first.id,
           visit_template_id: params[:visit_template_id].to_i
@@ -131,7 +132,7 @@ class CostEstimatesController < ApplicationController
         if (@cs_charge1 > 0 && @terminologies.where(coverage_type: 'Covered Service').count > 1)
           @cs_charge2 = TerminologyFeeSchedule.where(
             terminology_id: @terminologies.where(coverage_type: 'Covered Service').second.id,
-            fee_schedule_id: @fee_schedule.id).first.value
+            fee_schedule_id: @fee_schedule).first.value
           @cs_units2 = TemplateTerminology.where(
             terminology_id: @terminologies.where(coverage_type: 'Covered Service').second.id,
             visit_template_id: params[:visit_template_id].to_i
@@ -141,7 +142,7 @@ class CostEstimatesController < ApplicationController
           if (@cs_charge2 > 0 && @terminologies.where(coverage_type: 'Covered Service').count > 2)
             @cs_charge3 = TerminologyFeeSchedule.where(
               terminology_id: @terminologies.where(coverage_type: 'Covered Service').third.id,
-              fee_schedule_id: @fee_schedule.id).first.value
+              fee_schedule_id: @fee_schedule).first.value
             @cs_units3 = TemplateTerminology.where(
               terminology_id: @terminologies.where(coverage_type: 'Covered Service').third.id,
               visit_template_id: params[:visit_template_id].to_i
@@ -154,7 +155,7 @@ class CostEstimatesController < ApplicationController
       if @terminologies.where(coverage_type: 'Non-Covered Service').count > 0
         @ncs_charge1 = TerminologyFeeSchedule.where(
           terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').first.id,
-          fee_schedule_id: @fee_schedule.id).first.value
+          fee_schedule_id: @fee_schedule).first.value
         @ncs_units1 = TemplateTerminology.where(
           terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').first.id,
           visit_template_id: params[:visit_template_id].to_i
@@ -164,7 +165,7 @@ class CostEstimatesController < ApplicationController
         if (@ncs_charge1 > 0 && @terminologies.where(coverage_type: 'Non-Covered Service').count > 1)
           @ncs_charge2 = TerminologyFeeSchedule.where(
             terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').second.id,
-            fee_schedule_id: @fee_schedule.id).first.value
+            fee_schedule_id: @fee_schedule).first.value
           @ncs_units = TemplateTerminology.where(
             terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').second.id,
             visit_template_id: params[:visit_template_id].to_i
@@ -174,7 +175,7 @@ class CostEstimatesController < ApplicationController
           if (@ncs_charge2 > 0 && @terminologies.where(coverage_type: 'Non-Covered Service').count > 2)
             @ncs_charge3 = TerminologyFeeSchedule.where(
               terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').third.id,
-              fee_schedule_id: @fee_schedule.id).first.value
+              fee_schedule_id: @fee_schedule).first.value
             @ncs_units3 = TemplateTerminology.where(
               terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').third.id,
               visit_template_id: params[:visit_template_id].to_i
@@ -187,55 +188,55 @@ class CostEstimatesController < ApplicationController
   end
 
   def populate_charges
+    # debugger
     @template_terminologies = TemplateTerminology.where(visit_template_id: params[:visit_template_id].to_i)
     @terminologies = Terminology.where(id: @template_terminologies.pluck(:terminology_id))
-    @fee_schedule = VisitTemplate.find(params[:visit_template_id].to_i)
-    # @fee_schedule = FeeSchedule.find(params[:fee_schedule_id].to_i)
+    @fee_schedule = params[:fee_schedule_id].to_i
 
-    @fcs_charge1 = TerminologyFeeSchedule.where(
-      terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').first.id,
-      fee_schedule_id: @fee_schedule.id).first.value
-    if (@fcs_charge1 > 0 && @terminologies.where(coverage_type: 'Fully Covered Service').count > 1)
-      @fcs_charge2 = TerminologyFeeSchedule.where(
-      terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').second.id,
-      fee_schedule_id: @fee_schedule.id).first.value
+    if params[:terminology_fcs1].present?
+      @fcs_charge1 = TerminologyFeeSchedule.where(
+        terminology_id: params[:terminology_fcs1], fee_schedule_id: @fee_schedule).first.value
+      if (@fcs_charge1 > 0 && params[:terminology_fcs2].present?)
+        @fcs_charge2 = TerminologyFeeSchedule.where(
+          terminology_id: params[:terminology_fcs2], fee_schedule_id: @fee_schedule).first.value
 
-      if (@fcs_charge2 > 0 && @terminologies.where(coverage_type: 'Fully Covered Service').count > 2)
-        @fcs_charge3 = TerminologyFeeSchedule.where(
-          terminology_id: @terminologies.where(coverage_type: 'Fully Covered Service').third.id,
-          fee_schedule_id: @fee_schedule.id).first.value
+        if (@fcs_charge2 > 0 && params[:terminology_fcs3].present?)
+          @fcs_charge3 = TerminologyFeeSchedule.where(
+            terminology_id: params[:terminology_fcs3],
+            fee_schedule_id: @fee_schedule).first.value
+        end
       end
     end
 
-    @cs_charge1 = TerminologyFeeSchedule.where(
-      terminology_id: @terminologies.where(coverage_type: 'Covered Service').first.id,
-      fee_schedule_id: @fee_schedule.id).first.value
-    if (@cs_charge1 > 0 && @terminologies.where(coverage_type: 'Covered Service').count > 1)
-      @cs_charge2 = TerminologyFeeSchedule.where(
-      terminology_id: @terminologies.where(coverage_type: 'Covered Service').second.id,
-      fee_schedule_id: @fee_schedule.id).first.value
+    if params[:terminology_cs1].present?
+      @cs_charge1 = TerminologyFeeSchedule.where(
+        terminology_id: params[:terminology_cs1],fee_schedule_id: @fee_schedule).first.value
+      if (@cs_charge1 > 0 && params[:terminology_cs2].present?)
+        @cs_charge2 = TerminologyFeeSchedule.where(
+          terminology_id: params[:terminology_cs2],fee_schedule_id: @fee_schedule).first.value
 
-      if (@cs_charge2 > 0 && @terminologies.where(coverage_type: 'Covered Service').count > 2)
-        @cs_charge3 = TerminologyFeeSchedule.where(
-          terminology_id: @terminologies.where(coverage_type: 'Covered Service').third.id,
-          fee_schedule_id: @fee_schedule.id).first.value
+        if (@cs_charge2 > 0 && params[:terminology_cs3].present?)
+          @cs_charge3 = TerminologyFeeSchedule.where(
+            terminology_id: params[:terminology_cs3],fee_schedule_id: @fee_schedule).first.value
+        end
       end
     end
 
-    @ncs_charge1 = TerminologyFeeSchedule.where(
-      terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').first.id,
-      fee_schedule_id: @fee_schedule.id).first.value
-    if (@ncs_charge1 > 0 && @terminologies.where(coverage_type: 'Non-Covered Service').count > 1)
-      @ncs_charge2 = TerminologyFeeSchedule.where(
-      terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').second.id,
-      fee_schedule_id: @fee_schedule.id).first.value
+    if params[:terminology_ccs1].present?
+      @ncs_charge1 = TerminologyFeeSchedule.where(
+        terminology_id: params[:terminology_ncs1], fee_schedule_id: @fee_schedule).first.value
+      if (@ncs_charge1 > 0 && params[:terminology_ncs2].present?)
+        @ncs_charge2 = TerminologyFeeSchedule.where(
+          terminology_id: params[:terminology_ncs2], fee_schedule_id: @fee_schedule).first.value
 
-      if (@ncs_charge2 > 0 && @terminologies.where(coverage_type: 'Non-Covered Service').count > 2)
-        @ncs_charge3 = TerminologyFeeSchedule.where(
-          terminology_id: @terminologies.where(coverage_type: 'Non-Covered Service').third.id,
-          fee_schedule_id: @fee_schedule.id).first.value
+        if (@ncs_charge2 > 0 && params[:terminology_ncs2].present?)
+          @ncs_charge3 = TerminologyFeeSchedule.where(
+            terminology_id: params[:terminology_ncs3],
+            fee_schedule_id: @fee_schedule).first.value
+        end
       end
     end
+
   end
 
   def populate_terminology_fields

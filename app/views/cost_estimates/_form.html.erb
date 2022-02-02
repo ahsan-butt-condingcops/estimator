@@ -310,12 +310,12 @@
   </p>
 </fieldset>
 
-<%= button_to 'Create Template' %>
-<div id="create_template_name">
+<div id="create_template">
   <label for="new_template_name">Template Name</label>
   <input type="text" name="new_template_name" id="new_template_name" >
-  <%= button_to "Create Template Now" %>
+  <%= button_to "Create Template" %>
 </div>
+
 <%= button_to 'Update Template' %>
 <%= button_to 'Do Estimate' %>
 
@@ -323,7 +323,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script type="text/javascript">
     $('#visit_template_id').change(function(){
-        $("input[value='Create Template']").hide();
+        $("#create_template").hide();
         $("input[value='Update Template']").show();
         $.ajax({
             url: "populate_terminologies",
@@ -360,12 +360,15 @@
                     terminology_fcs1: $('#terminology_fcs1 option:selected').val(),
                     terminology_fcs2: $('#terminology_fcs2 option:selected').val(),
                     terminology_fcs3: $('#terminology_fcs3 option:selected').val(),
+                    terminology_fcs4: $('#terminology_fcs4 option:selected').val(),
                     terminology_cs1: $('#terminology_cs1 option:selected').val(),
                     terminology_cs2: $('#terminology_cs2 option:selected').val(),
                     terminology_cs3: $('#terminology_cs3 option:selected').val(),
+                    terminology_cs4: $('#terminology_cs4 option:selected').val(),
                     terminology_ncs1: $('#terminology_ncs1 option:selected').val(),
                     terminology_ncs2: $('#terminology_ncs2 option:selected').val(),
                     terminology_ncs3: $('#terminology_ncs3 option:selected').val(),
+                    terminology_ncs4: $('#terminology_ncs4 option:selected').val()
                 }
             })
         // }
@@ -621,15 +624,81 @@
 
     $("input[value='Create Template']").click(function(e) {
         e.preventDefault();
-        $("input[value='Create Template']").hide();
-        $('#create_template_name').show();
+        $.ajax({
+            url: "create_template",
+            type: "GET",
+            data: {
+                visit_template_id: $('#visit_template_id option:selected').val(),
+                fee_schedule_id: $('#fee_schedule_id option:selected').val(),
+                terminology_fcs1: $('#terminology_fcs1 option:selected').val(),
+                units_fcs1: $('#units_fcs1').val(),
+                terminology_fcs2: $('#terminology_fcs2 option:selected').val(),
+                units_fcs2: $('#units_fcs2').val(),
+                terminology_fcs3: $('#terminology_fcs3 option:selected').val(),
+                units_fcs3: $('#units_fcs3').val(),
+                terminology_fcs4: $('#terminology_fcs4 option:selected').val(),
+                units_fcs4: $('#units_fcs4').val(),
+                terminology_cs1: $('#terminology_cs1 option:selected').val(),
+                units_cs1: $('#units_cs1').val(),
+                terminology_cs2: $('#terminology_cs2 option:selected').val(),
+                units_cs2: $('#units_cs2').val(),
+                terminology_cs3: $('#terminology_cs3 option:selected').val(),
+                units_cs3: $('#units_cs3').val(),
+                terminology_cs4: $('#terminology_cs4 option:selected').val(),
+                units_cs4: $('#units_cs4').val(),
+                terminology_ncs1: $('#terminology_ncs1 option:selected').val(),
+                units_ncs1: $('#units_ncs1').val(),
+                terminology_ncs2: $('#terminology_ncs2 option:selected').val(),
+                units_ncs2: $('#units_ncs2').val(),
+                terminology_ncs3: $('#terminology_ncs3 option:selected').val(),
+                units_ncs3: $('#units_ncs3').val(),
+                terminology_ncs4: $('#terminology_ncs4 option:selected').val(),
+                units_ncs4: $('#units_ncs4').val(),
+                new_template_name: $('#new_template_name').val(),
+            }
+        })
     });
 
+    $("input[value='Update Template']").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "update_template",
+            type: "GET",
+            data: {
+                visit_template_id: $('#visit_template_id option:selected').val(),
+                fee_schedule_id: $('#fee_schedule_id option:selected').val(),
+                terminology_fcs1: $('#terminology_fcs1 option:selected').val(),
+                units_fcs1: $('#units_fcs1').val(),
+                terminology_fcs2: $('#terminology_fcs2 option:selected').val(),
+                units_fcs2: $('#units_fcs2').val(),
+                terminology_fcs3: $('#terminology_fcs3 option:selected').val(),
+                units_fcs3: $('#units_fcs3').val(),
+                terminology_fcs4: $('#terminology_fcs4 option:selected').val(),
+                units_fcs4: $('#units_fcs4').val(),
+                terminology_cs1: $('#terminology_cs1 option:selected').val(),
+                units_cs1: $('#units_cs1').val(),
+                terminology_cs2: $('#terminology_cs2 option:selected').val(),
+                units_cs2: $('#units_cs2').val(),
+                terminology_cs3: $('#terminology_cs3 option:selected').val(),
+                units_cs3: $('#units_cs3').val(),
+                terminology_cs4: $('#terminology_cs4 option:selected').val(),
+                units_cs4: $('#units_cs4').val(),
+                terminology_ncs1: $('#terminology_ncs1 option:selected').val(),
+                units_ncs1: $('#units_ncs1').val(),
+                terminology_ncs2: $('#terminology_ncs2 option:selected').val(),
+                units_ncs2: $('#units_ncs2').val(),
+                terminology_ncs3: $('#terminology_ncs3 option:selected').val(),
+                units_ncs3: $('#units_ncs3').val(),
+                terminology_ncs4: $('#terminology_ncs4 option:selected').val(),
+                units_ncs4: $('#units_ncs4').val(),
+            }
+        })
+    });
 
     $('#add_terminology_id').on("select2:selecting", function(e) {
         setTimeout(function() {
             $.ajax({
-                url: "populate_terminology_fields_temp",
+                url: "populate_terminology_fields_for_selected",
                 type: "GET",
                 data: {terminology_id: $('#add_terminology_id option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
             })

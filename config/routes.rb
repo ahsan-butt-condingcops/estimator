@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :cost_estimates do
     collection do
-      get :populate_terminology_fields_temp
+      get :update_template
+      get :create_template
+      get :populate_terminology_fields_for_selected
       get :populate_terminology_fields
       get :populate_terminologies
       get :populate_charges

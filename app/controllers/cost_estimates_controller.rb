@@ -222,7 +222,7 @@ class CostEstimatesController < ApplicationController
       end
     end
 
-    if params[:terminology_ccs1].present?
+    if params[:terminology_ncs1].present?
       @ncs_charge1 = TerminologyFeeSchedule.where(
         terminology_id: params[:terminology_ncs1], fee_schedule_id: @fee_schedule).first.value
       if (@ncs_charge1 > 0 && params[:terminology_ncs2].present?)
@@ -231,8 +231,7 @@ class CostEstimatesController < ApplicationController
 
         if (@ncs_charge2 > 0 && params[:terminology_ncs2].present?)
           @ncs_charge3 = TerminologyFeeSchedule.where(
-            terminology_id: params[:terminology_ncs3],
-            fee_schedule_id: @fee_schedule).first.value
+            terminology_id: params[:terminology_ncs3], fee_schedule_id: @fee_schedule).first.value
         end
       end
     end
@@ -249,12 +248,204 @@ class CostEstimatesController < ApplicationController
     end
   end
 
-  def populate_terminology_fields_temp
+  def populate_terminology_fields_for_selected
     @terminology = Terminology.find(params[:terminology_id])
     if params[:fee_schedule_id].blank?
       @terminology_fee_schedule = TerminologyFeeSchedule.where(terminology_id: @terminology.id).first
     else
       @terminology_fee_schedule = TerminologyFeeSchedule.where(terminology_id: @terminology.id, fee_schedule_id: params[:fee_schedule_id]).first
+    end
+  end
+
+  def create_template
+    @visit_template = VisitTemplate.create!(name: params[:new_template_name], fee_schedule_id: params[:fee_schedule_id])
+    unless params[:terminology_fcs1].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_fcs1],
+                                  units: params[:units_fcs1])
+    end
+    unless params[:terminology_fcs2].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_fcs2],
+                                  units: params[:units_fcs2])
+    end
+    unless params[:terminology_fcs3].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_fcs3],
+                                  units: params[:units_fcs3])
+    end
+    unless params[:terminology_fcs4].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_fcs4],
+                                  units: params[:units_fcs4])
+    end
+
+    unless params[:terminology_cs1].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_cs1],
+                                  units: params[:units_cs1])
+    end
+    unless params[:terminology_cs2].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_cs2],
+                                  units: params[:units_cs2])
+    end
+    unless params[:terminology_cs3].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_cs3],
+                                  units: params[:units_cs3])
+    end
+    unless params[:terminology_cs4].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_cs4],
+                                  units: params[:units_cs4])
+    end
+
+    unless params[:terminology_ncs1].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_ncs1],
+                                  units: params[:units_ncs1])
+    end
+    unless params[:terminology_ncs2].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_ncs2],
+                                  units: params[:units_ncs2])
+    end
+    unless params[:terminology_ncs3].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_ncs3],
+                                  units: params[:units_ncs3])
+    end
+    unless params[:terminology_ncs4].blank?
+      TemplateTerminology.create!(visit_template_id: @visit_template.id,
+                                  terminology_id: params[:terminology_ncs4],
+                                  units: params[:units_ncs4])
+    end
+  end
+
+  def update_template
+    debugger
+    @visit_template = VisitTemplate.find(params[:visit_template_id])
+    @visit_template.update_columns(fee_schedule_id: params[:fee_schedule_id]) if @visit_template.fee_schedule_id != params[:fee_schedule_id].to_i
+
+    unless params[:terminology_fcs1].blank?
+      fcs1 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs1])
+      if fcs1.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs1],
+                                    units: params[:units_fcs1])
+      else
+        fcs1.first.update_columns(units: params[:units_fcs1])
+      end
+    end
+
+    unless params[:terminology_fcs2].blank?
+      fcs2 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs2])
+      if fcs2.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs2],
+                                    units: params[:units_fcs2])
+      else
+        fcs2.first.update_columns(units: params[:units_fcs2])
+      end
+    end
+
+    unless params[:terminology_fcs3].blank?
+      fcs3 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs3])
+      if fcs3.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs3],
+                                    units: params[:units_fcs3])
+      else
+        fcs3.first.update_columns(units: params[:units_fcs3])
+      end
+    end
+
+    unless params[:terminology_fcs4].blank?
+      fcs4 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs4])
+      if fcs4.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_fcs4],
+                                    units: params[:units_fcs4])
+      else
+        fcs4.first.update_columns(units: params[:units_fcs4])
+      end
+    end
+
+    unless params[:terminology_cs1].blank?
+      cs1 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs1])
+      if cs1.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs1],
+                                    units: params[:units_cs1])
+      else
+        cs1.first.update_columns(units: params[:units_cs1])
+      end
+    end
+
+    unless params[:terminology_cs2].blank?
+      cs2 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs2])
+      if cs2.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs2],
+                                    units: params[:units_cs2])
+      else
+        cs2.first.update_columns(units: params[:units_cs2])
+      end
+    end
+
+    unless params[:terminology_cs3].blank?
+      cs3 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs3])
+      if cs3.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs3],
+                                    units: params[:units_cs3])
+      else
+        cs3.first.update_columns(units: params[:units_cs3])
+      end
+    end
+
+    unless params[:terminology_cs4].blank?
+      cs4 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs4])
+      if cs4.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_cs4],
+                                    units: params[:units_cs4])
+      else
+        cs4.first.update_columns(units: params[:units_cs4])
+      end
+    end
+
+    unless params[:terminology_ncs1].blank?
+      ncs1 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs1])
+      if ncs1.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs1],
+                                    units: params[:units_ncs1])
+      else
+        ncs1.first.update_columns(units: params[:units_ncs1])
+      end
+    end
+
+    unless params[:terminology_ncs2].blank?
+      ncs2 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs2])
+      if ncs2.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs2],
+                                    units: params[:units_ncs2])
+      else
+        ncs2.first.update_columns(units: params[:units_ncs2])
+      end
+    end
+
+    unless params[:terminology_ncs3].blank?
+      ncs3 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs3])
+      if ncs3.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs3],
+                                    units: params[:units_ncs3])
+      else
+        ncs3.first.update_columns(units: params[:units_ncs3])
+      end
+    end
+
+    unless params[:terminology_ncs4].blank?
+      ncs4 = TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs4])
+      if ncs4.blank?
+        TemplateTerminology.create!(visit_template_id: @visit_template.id, terminology_id: params[:terminology_ncs4],
+                                    units: params[:units_ncs4])
+      else
+        ncs4.first.update_columns(units: params[:units_ncs4])
+      end
     end
   end
 

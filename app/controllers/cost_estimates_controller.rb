@@ -324,7 +324,6 @@ class CostEstimatesController < ApplicationController
   end
 
   def update_template
-    debugger
     @visit_template = VisitTemplate.find(params[:visit_template_id])
     @visit_template.update_columns(fee_schedule_id: params[:fee_schedule_id]) if @visit_template.fee_schedule_id != params[:fee_schedule_id].to_i
 

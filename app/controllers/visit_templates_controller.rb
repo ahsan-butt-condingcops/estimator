@@ -25,23 +25,34 @@ class VisitTemplatesController < ApplicationController
 
   # POST /visit_templates or /visit_templates.json
   def create
+    @terminologies = Terminology.all
+    @fee_schedules = FeeSchedule.all
     @visit_template = VisitTemplate.new(visit_template_params)
     respond_to do |format|
-      if @visit_template.save
-        params[:terminologies].each do |tt|
-          TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: tt.to_i).first_or_create
+
+      if params[:terminologies].nil?
+        if @visit_template.save
+          params[:terminologies].each do |tt|
+            TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: tt.to_i).first_or_create
+          end
+          format.html { redirect_to visit_template_url(@visit_template), notice: "Visit template was successfully created." }
+          format.json { render :show, status: :created, location: @visit_template }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @visit_template.errors, status: :unprocessable_entity }
         end
-        format.html { redirect_to visit_template_url(@visit_template), notice: "Visit template was successfully created." }
-        format.json { render :show, status: :created, location: @visit_template }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @visit_template.errors, status: :unprocessable_entity }
+
+
       end
+
     end
   end
 
   # PATCH/PUT /visit_templates/1 or /visit_templates/1.json
   def update
+    @terminologies = Terminology.all
+    @fee_schedules = FeeSchedule.all
     respond_to do |format|
       if @visit_template.update(visit_template_params)
 

@@ -23,8 +23,10 @@ class TerminologiesController < ApplicationController
 
   # POST /terminologies or /terminologies.json
   def create
+    @fee_schedules = FeeSchedule.all
     @terminology = Terminology.new(terminology_params)
     respond_to do |format|
+      debugger
       if @terminology.save
         @fee_schedules = FeeSchedule.all
 
@@ -40,6 +42,7 @@ class TerminologiesController < ApplicationController
         format.html { redirect_to terminology_url(@terminology), notice: "Terminology was successfully created." }
         format.json { render :show, status: :created, location: @terminology }
       else
+        # format.html { render :new, status: :unprocessable_entity }
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @terminology.errors, status: :unprocessable_entity }
       end
@@ -48,10 +51,10 @@ class TerminologiesController < ApplicationController
 
   # PATCH/PUT /terminologies/1 or /terminologies/1.json
   def update
+    @fee_schedules = FeeSchedule.all
     respond_to do |format|
       if @terminology.update(terminology_params)
         @fee_schedules = FeeSchedule.all
-
         @fee_schedules.each do |fs|
           tfs = TerminologyFeeSchedule.where(terminology_id: @terminology.id, fee_schedule_id: fs.id)
           if tfs.exists?

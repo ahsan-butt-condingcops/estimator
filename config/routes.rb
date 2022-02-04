@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :cost_estimates do
     collection do
+      get :remove_terminology
       get :update_template
       get :create_template
       get :populate_terminology_fields_for_selected

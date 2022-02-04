@@ -188,7 +188,6 @@ class CostEstimatesController < ApplicationController
   end
 
   def populate_charges
-    # debugger
     @template_terminologies = TemplateTerminology.where(visit_template_id: params[:visit_template_id].to_i)
     @terminologies = Terminology.where(id: @template_terminologies.pluck(:terminology_id))
     @fee_schedule = params[:fee_schedule_id].to_i
@@ -321,6 +320,8 @@ class CostEstimatesController < ApplicationController
                                   terminology_id: params[:terminology_ncs4],
                                   units: params[:units_ncs4])
     end
+
+
   end
 
   def update_template
@@ -446,6 +447,10 @@ class CostEstimatesController < ApplicationController
         ncs4.first.update_columns(units: params[:units_ncs4])
       end
     end
+  end
+
+  def remove_terminology
+    TemplateTerminology.where(visit_template_id: params[:visit_template_id].to_i, terminology_id: params[:terminology_id].to_i).last.destroy
   end
 
   private

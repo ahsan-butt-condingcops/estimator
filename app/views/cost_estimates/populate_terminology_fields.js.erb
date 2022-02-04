@@ -7,6 +7,9 @@ $('#fee_schedule_fcs2').val("<%= @terminology_fee_schedule.value %>")
 <% elsif @terminology_type == 'fcs3' %>
 $('#description_fcs3').val("<%= @terminology.description %>")
 $('#fee_schedule_fcs3').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'fcs4' %>
+$('#description_fcs4').val("<%= @terminology.description %>")
+$('#fee_schedule_fcs4').val("<%= @terminology_fee_schedule.value %>")
 <% elsif @terminology_type == 'cs1' %>
 $('#description_cs1').val("<%= @terminology.description %>")
 $('#fee_schedule_cs1').val("<%= @terminology_fee_schedule.value %>")
@@ -16,6 +19,9 @@ $('#fee_schedule_cs2').val("<%= @terminology_fee_schedule.value %>")
 <% elsif @terminology_type == 'cs3' %>
 $('#description_cs3').val("<%= @terminology.description %>")
 $('#fee_schedule_cs3').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'cs4' %>
+$('#description_cs4').val("<%= @terminology.description %>")
+$('#fee_schedule_cs4').val("<%= @terminology_fee_schedule.value %>")
 <% elsif @terminology_type == 'ncs1' %>
 $('#description_ncs1').val("<%= @terminology.description %>")
 $('#fee_schedule_ncs1').val("<%= @terminology_fee_schedule.value %>")
@@ -25,4 +31,7 @@ $('#fee_schedule_ncs2').val("<%= @terminology_fee_schedule.value %>")
 <% elsif @terminology_type == 'ncs3' %>
 $('#description_ncs3').val("<%= @terminology.description %>")
 $('#fee_schedule_ncs3').val("<%= @terminology_fee_schedule.value %>")
+<% elsif @terminology_type == 'ncs4' %>
+$('#description_ncs4').val("<%= @terminology.description %>")
+$('#fee_schedule_ncs4').val("<%= @terminology_fee_schedule.value %>")
 <% end %>

@@ -31,6 +31,10 @@ class VisitTemplatesController < ApplicationController
     respond_to do |format|
 
       if params[:terminologies].nil?
+        format.html { render :new, status: :unprocessable_entity }
+        @visit_template.errors[:base] << "No Terminology selected!"
+        format.json { render json: @visit_template.errors, status: :unprocessable_entity }
+      else
         if @visit_template.save
           params[:terminologies].each do |tt|
             TemplateTerminology.where(visit_template_id: @visit_template.id, terminology_id: tt.to_i).first_or_create
@@ -41,9 +45,6 @@ class VisitTemplatesController < ApplicationController
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @visit_template.errors, status: :unprocessable_entity }
         end
-      else
-
-
       end
 
     end

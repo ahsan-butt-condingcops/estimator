@@ -500,8 +500,8 @@
         var copay = Number($('#copay').val());
         var coins = Number($('#coins').val());
         var deductible_balance = Number($('#deductible_balance').val());
-        var total_cs = Number($('#total_cs').val());
-        var total_ncs = Number($('#total_ncs').val());
+        var total_cs = Number($('#subtotal_cs').val());
+        var total_ncs = Number($('#subtotal_ncs').val());
         var patient_copay = 0;
         var patient_deductible = 0;
         var patient_coins = 0;
@@ -533,92 +533,303 @@
     });
 
     $('#terminology_fcs1').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_fcs1 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-            url: "populate_terminology_fields",
-            type: "GET",
-            data: {terminology_type: 'fcs1', terminology_id: $('#terminology_fcs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-        })
+            if ($('#terminology_fcs1 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_fcs1').val('');
+                $('#fee_schedule_fcs1').val('');
+                $('#units_fcs1').val('');
+                $('#total_fcs1').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'fcs1', terminology_id: $('#terminology_fcs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
     $('#terminology_fcs2').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_fcs2 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'fcs2', terminology_id: $('#terminology_fcs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_fcs2 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_fcs2').val('');
+                $('#fee_schedule_fcs2').val('');
+                $('#units_fcs2').val('');
+                $('#total_fcs2').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'fcs2', terminology_id: $('#terminology_fcs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+
+            }
         }, 500);
     });
 
     $('#terminology_fcs3').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_fcs3 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'fcs3', terminology_id: $('#terminology_fcs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_fcs3 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_fcs3').val('');
+                $('#fee_schedule_fcs3').val('');
+                $('#units_fcs3').val('');
+                $('#total_fcs3').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'fcs3', terminology_id: $('#terminology_fcs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
+        }, 500);
+    });
+
+    $('#terminology_fcs4').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_fcs4 option:selected').val()
+        setTimeout(function() {
+            if ($('#terminology_fcs4 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_fcs4').val('');
+                $('#fee_schedule_fcs4').val('');
+                $('#units_fcs4').val('');
+                $('#total_fcs4').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'fcs4', terminology_id: $('#terminology_fcs4 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
     $('#terminology_cs1').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_cs1 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'cs1', terminology_id: $('#terminology_cs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_cs1 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_cs1').val('');
+                $('#fee_schedule_cs1').val('');
+                $('#units_cs1').val('');
+                $('#total_cs1').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'cs1', terminology_id: $('#terminology_cs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
     $('#terminology_cs2').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_cs2 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'cs2', terminology_id: $('#terminology_cs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_cs2 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_cs2').val('');
+                $('#fee_schedule_cs2').val('');
+                $('#units_cs2').val('');
+                $('#total_cs2').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'cs2', terminology_id: $('#terminology_cs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
     $('#terminology_cs3').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_cs3 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'cs3', terminology_id: $('#terminology_cs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_cs3 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_cs3').val('');
+                $('#fee_schedule_cs3').val('');
+                $('#units_cs3').val('');
+                $('#total_cs3').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'cs3', terminology_id: $('#terminology_cs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
+        }, 500);
+    });
+
+    $('#terminology_cs4').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_cs4 option:selected').val()
+        setTimeout(function() {
+            if ($('#terminology_cs4 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_cs4').val('');
+                $('#fee_schedule_cs4').val('');
+                $('#units_cs4').val('');
+                $('#total_cs4').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'cs4', terminology_id: $('#terminology_cs4 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
     $('#terminology_ncs1').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_ncs1 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'ncs1', terminology_id: $('#terminology_ncs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_ncs1 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_ncs1').val('');
+                $('#fee_schedule_ncs1').val('');
+                $('#units_ncs1').val('');
+                $('#total_ncs1').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'ncs1', terminology_id: $('#terminology_ncs1 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
     $('#terminology_ncs2').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_ncs2 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'ncs2', terminology_id: $('#terminology_ncs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_ncs2 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_ncs2').val('');
+                $('#fee_schedule_ncs2').val('');
+                $('#units_ncs2').val('');
+                $('#total_ncs2').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'ncs2', terminology_id: $('#terminology_ncs2 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
     $('#terminology_ncs3').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_ncs3 option:selected').val()
         setTimeout(function() {
-            $.ajax({
-                url: "populate_terminology_fields",
-                type: "GET",
-                data: {terminology_type: 'ncs3', terminology_id: $('#terminology_ncs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
-            })
+            if ($('#terminology_ncs3 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_ncs3').val('');
+                $('#fee_schedule_ncs3').val('');
+                $('#units_ncs3').val('');
+                $('#total_ncs3').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'ncs3', terminology_id: $('#terminology_ncs3 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
+        }, 500);
+    });
+
+    $('#terminology_ncs4').on("select2:selecting", function(e) {
+        var p_val = $('#terminology_ncs4 option:selected').val()
+        setTimeout(function() {
+            if ($('#terminology_ncs4 option:selected').val() == ''){
+                if ($('#visit_template_id option:selected').val() != ''){
+                    $.ajax({
+                        url: "remove_terminology",
+                        type: "GET",
+                        data: {terminology_id: p_val, visit_template_id: $('#visit_template_id option:selected').val()},
+                    })
+                }
+                $('#description_ncs4').val('');
+                $('#fee_schedule_ncs4').val('');
+                $('#units_ncs4').val('');
+                $('#total_ncs4').val('');
+            } else{
+                $.ajax({
+                    url: "populate_terminology_fields",
+                    type: "GET",
+                    data: {terminology_type: 'ncs4', terminology_id: $('#terminology_ncs4 option:selected').val(), fee_schedule_id: $('#fee_schedule_id option:selected').val()},
+                })
+            }
         }, 500);
     });
 
@@ -657,6 +868,8 @@
                 new_template_name: $('#new_template_name').val(),
             }
         })
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        $(".notice").text('Template created successfully!');
     });
 
     $("input[value='Update Template']").click(function(e) {
@@ -693,6 +906,8 @@
                 units_ncs4: $('#units_ncs4').val(),
             }
         })
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        $(".notice").text('Template updated successfully!');
     });
 
     $('#add_terminology_id').on("select2:selecting", function(e) {

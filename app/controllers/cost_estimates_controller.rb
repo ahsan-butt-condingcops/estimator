@@ -257,7 +257,7 @@ class CostEstimatesController < ApplicationController
   end
 
   def create_template
-    @visit_template = VisitTemplate.create!(name: params[:new_template_name], fee_schedule_id: params[:fee_schedule_id])
+    @visit_template = VisitTemplate.create(name: params[:new_template_name], fee_schedule_id: params[:fee_schedule_id])
     unless params[:terminology_fcs1].blank?
       TemplateTerminology.create!(visit_template_id: @visit_template.id,
                                   terminology_id: params[:terminology_fcs1],

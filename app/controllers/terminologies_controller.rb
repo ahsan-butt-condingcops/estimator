@@ -26,7 +26,6 @@ class TerminologiesController < ApplicationController
     @fee_schedules = FeeSchedule.all
     @terminology = Terminology.new(terminology_params)
     respond_to do |format|
-      debugger
       if @terminology.save
         @fee_schedules = FeeSchedule.all
 

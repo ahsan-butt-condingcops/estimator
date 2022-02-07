@@ -1,0 +1,5 @@
+<% if @visit_template.errors.count > 0 %>
+  $(".notice").text("<%= @visit_template.errors.full_messages.to_sentence.html_safe %>");
+<% else %>
+  $(".notice").text('Template created successfully!');
+<% end %>

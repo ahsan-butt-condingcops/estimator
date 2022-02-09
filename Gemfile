@@ -56,3 +56,6 @@ gem 'devise'
 gem 'awesome_print', :require => 'ap'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+
+gem 'bootstrap', '~> 4.1.3'
+gem 'wicked_pdf'

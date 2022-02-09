@@ -318,6 +318,7 @@
 
 <%= button_to 'Update Template' %>
 <%= button_to 'Do Estimate' %>
+<%= button_to 'Print' %>
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -919,6 +920,64 @@
         }, 500);
     });
 
+    $("input[value='Print']").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "print_pdf",
+            type: "GET",
+            data: {
+                patient_name: $('#patient_name').val(),
+                terminology_fcs1: $('#terminology_fcs1 option:selected').text(),
+                terminology_fcs2: $('#terminology_fcs2 option:selected').text(),
+                terminology_fcs3: $('#terminology_fcs3 option:selected').text(),
+                terminology_fcs4: $('#terminology_fcs4 option:selected').text(),
+                description_fcs1: $('#description_fcs1').val(),
+                description_fcs2: $('#description_fcs2').val(),
+                description_fcs3: $('#description_fcs3').val(),
+                description_fcs4: $('#description_fcs4').val(),
+                total_fcs1: $('#total_fcs1').val(),
+                total_fcs2: $('#total_fcs2').val(),
+                total_fcs3: $('#total_fcs3').val(),
+                total_fcs4: $('#total_fcs4').val(),
+                subtotal_fcs: $('#subtotal_fcs').val(),
+
+                terminology_cs1: $('#terminology_cs1 option:selected').text(),
+                terminology_cs2: $('#terminology_cs2 option:selected').text(),
+                terminology_cs3: $('#terminology_cs3 option:selected').text(),
+                terminology_cs4: $('#terminology_cs4 option:selected').text(),
+                description_cs1: $('#description_cs1').val(),
+                description_cs2: $('#description_cs2').val(),
+                description_cs3: $('#description_cs3').val(),
+                description_cs4: $('#description_cs4').val(),
+                total_cs1: $('#total_cs1').val(),
+                total_cs2: $('#total_cs2').val(),
+                total_cs3: $('#total_cs3').val(),
+                total_cs4: $('#total_cs4').val(),
+                subtotal_cs: $('#subtotal_cs').val(),
+
+                terminology_ncs1: $('#terminology_ncs1 option:selected').text(),
+                terminology_ncs2: $('#terminology_ncs2 option:selected').text(),
+                terminology_ncs3: $('#terminology_ncs3 option:selected').text(),
+                terminology_ncs4: $('#terminology_ncs4 option:selected').text(),
+                description_ncs1: $('#description_ncs1').val(),
+                description_ncs2: $('#description_ncs2').val(),
+                description_ncs3: $('#description_ncs3').val(),
+                description_ncs4: $('#description_ncs4').val(),
+                total_ncs1: $('#total_ncs1').val(),
+                total_ncs2: $('#total_ncs2').val(),
+                total_ncs3: $('#total_ncs3').val(),
+                total_ncs4: $('#total_ncs4').val(),
+                subtotal_ncs: $('#subtotal_ncs').val(),
+
+                total_cost: $('#total_cost').val(),
+                insurance_pays: $('#insurance_pays').val(),
+                patient_copay: $('#patient_copay').val(),
+                patient_deductible: $('#patient_deductible').val(),
+                patient_coins: $('#patient_coins').val(),
+                patient_total_out_of_pocket_estimate: $('#patient_total_out_of_pocket_estimate').val(),
+            }
+        })
+    });
 
     $(document).ready(function() {
         $('#next_available_fcs').val(1);

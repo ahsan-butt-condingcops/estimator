@@ -1,0 +1,119 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<div>
+  <h1>Visit Estimate for <%= @patient_name %></h1>
+  <p align="right"><%= Date.today.to_s(:long) %></p>
+</div>
+<hr/>
+
+<h1>Service Details</h1>
+<div style="border: gray solid; border-width: thin">
+  <div class="form-group-row" style="font-size: 20px">
+    <div class="col-xs-2">CPT</div><div class="col-xs-8">Description</div><div class="col-xs-2 text-right">Cost</div>
+  </div>
+  <hr/>
+
+  <p style="margin-left: 5px;"><b style="font-size: 20px"><i>Fully Covered Services</i></b>(Services that are 100% paid for by your insurance provider)</p>
+  <% unless @terminology_fcs1 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_fcs1 %></div><div class="col-xs-8"><%= @description_fcs1 %></div><div class="col-xs-2 text-right"><%= @total_fcs1 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_fcs2 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_fcs2 %></div><div class="col-xs-8"><%= @description_fcs2 %></div><div class="col-xs-2 text-right"><%= @total_fcs2 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_fcs3 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_fcs3 %></div><div class="col-xs-8"><%= @description_fcs3 %></div><div class="col-xs-2 text-right"><%= @total_fcs3 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_fcs4 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_fcs4 %></div><div class="col-xs-8"><%= @description_fcs4 %></div><div class="col-xs-2 text-right"><%= @total_fcs4 %></div>
+    </div>
+  <% end %>
+  <br/><p style="float: right"><b><i><%= @subtotal_fcs %></i></b></p>
+  <hr/><br/>
+
+  <p style="margin-left: 5px;"><b style="font-size: 20px"><i>Covered Services</i></b>(Services paid for by your provider, after deductibles, co-pay and co-insurance are applied)</p>
+  <% unless @terminology_cs1 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_cs1 %></div><div class="col-xs-8"><%= @description_cs1 %></div><div class="col-xs-2 text-right"><%= @total_cs1 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_cs2 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_cs2 %></div><div class="col-xs-8"><%= @description_cs2 %></div><div class="col-xs-2 text-right"><%= @total_cs2 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_cs3 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_cs3 %></div><div class="col-xs-8"><%= @description_cs3 %></div><div class="col-xs-2 text-right"><%= @total_cs3 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_cs4 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_cs4 %></div><div class="col-xs-8"><%= @description_cs4 %></div><div class="col-xs-2 text-right"><%= @total_cs4 %></div>
+    </div>
+  <% end %>
+  <br/><p style="float: right"><b><i><%= @subtotal_cs %></i></b></p>
+  <hr/><br/>
+
+  <p style="margin-left: 5px;"><b style="font-size: 20px"><i>Non Covered Services</i></b>(Services that are not paid for by your insurance provider)</p>
+  <% unless @terminology_ncs1 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_ncs1 %></div><div class="col-xs-8"><%= @description_ncs1 %></div><div class="col-xs-2 text-right"><%= @total_ncs1 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_ncs2 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_ncs2 %></div><div class="col-xs-8"><%= @description_ncs2 %></div><div class="col-xs-2 text-right"><%= @total_ncs2 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_ncs3 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_ncs3 %></div><div class="col-xs-8"><%= @description_ncs3 %></div><div class="col-xs-2 text-right"><%= @total_ncs3 %></div>
+    </div>
+  <% end %>
+  <% unless @terminology_ncs4 == '' %>
+    <div class="form-group-row">
+      <div class="col-xs-2"><%= @terminology_ncs4 %></div><div class="col-xs-8"><%= @description_ncs4 %></div><div class="col-xs-2 text-right"><%= @total_ncs4 %></div>
+    </div>
+  <% end %>
+  <br/><p style="float: right"><b><i><%= @subtotal_ncs %></i></b></p><hr/>
+  <br/><p style="float: right"><b>This Visit Total $<%= @total_cost %></b></p>
+</div>
+
+<div class="form-group-row" style="text-align: center; margin-top: 30px;">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-2" style="border: gray solid; border-width: thin; border-radius: 25px;">
+    <b>Insurance pays</b><br/>
+    <p>This is the portion of the bill paid by your insurance carrier.</p>
+    $<%= @insurance_pays %>
+  </div>
+  <div class="col-xs-2" style="border: gray solid; border-width: thin; border-radius: 25px;">
+    <b>Co-Pay</b><br/>
+    <p>This is a set out-of-pocket amount typically paid at the time of service.</p>
+    $<%= @patient_copay %>
+  </div>
+  <div class="col-xs-2" style="border: gray solid; border-width: thin; border-radius: 25px;">
+    <b>Deductible</b><br/>
+    <p>This is what you will pay on covered services before your plan starts to pay.</p>
+    $<%= @patient_deductible %>
+  </div>
+  <div class="col-xs-2" style="border: gray solid; border-width: thin; border-radius: 25px;">
+    <b>Co-Insurance</b><br/>
+    <p>This is your portion of the bill for a service, after you have met your deductible.</p>
+    $<%= @patient_coins %>
+  </div>
+  <div class="col-xs-2" style="border: gray solid; border-width: thin; border-radius: 25px;">
+    <b>Not Covered</b><br/>
+    <p>You are responsible for paying for the services not covered by your health plan.</p>
+    $<%= @subtotal_ncs %>
+  </div>
+  <div class="col-xs-1"></div>
+</div>

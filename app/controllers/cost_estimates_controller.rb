@@ -453,6 +453,70 @@ class CostEstimatesController < ApplicationController
     TemplateTerminology.where(visit_template_id: params[:visit_template_id].to_i, terminology_id: params[:terminology_id].to_i).last.destroy
   end
 
+  def print_pdf
+    # debugger
+    @patient_name = params[:patient_name]
+
+    @terminology_fcs1 = params[:terminology_fcs1]
+    @terminology_fcs2 = params[:terminology_fcs2]
+    @terminology_fcs3 = params[:terminology_fcs3]
+    @terminology_fcs4 = params[:terminology_fcs4]
+    @description_fcs1 = params[:description_fcs1]
+    @description_fcs2 = params[:description_fcs2]
+    @description_fcs3 = params[:description_fcs3]
+    @description_fcs4 = params[:description_fcs4]
+    @total_fcs1 = params[:total_fcs1]
+    @total_fcs2 = params[:total_fcs2]
+    @total_fcs3 = params[:total_fcs3]
+    @total_fcs4 = params[:total_fcs4]
+    @subtotal_fcs = params[:subtotal_fcs]
+
+    @terminology_cs1 = params[:terminology_cs1]
+    @terminology_cs2 = params[:terminology_cs2]
+    @terminology_cs3 = params[:terminology_cs3]
+    @terminology_cs4 = params[:terminology_cs4]
+    @description_cs1 = params[:description_cs1]
+    @description_cs2 = params[:description_cs2]
+    @description_cs3 = params[:description_cs3]
+    @description_cs4 = params[:description_cs4]
+    @total_cs1 = params[:total_cs1]
+    @total_cs2 = params[:total_cs2]
+    @total_cs3 = params[:total_cs3]
+    @total_cs4 = params[:total_cs4]
+    @subtotal_cs = params[:subtotal_cs]
+
+    @terminology_ncs1 = params[:terminology_ncs1]
+    @terminology_ncs2 = params[:terminology_ncs2]
+    @terminology_ncs3 = params[:terminology_ncs3]
+    @terminology_ncs4 = params[:terminology_ncs4]
+    @description_ncs1 = params[:description_ncs1]
+    @description_ncs2 = params[:description_ncs2]
+    @description_ncs3 = params[:description_ncs3]
+    @description_ncs4 = params[:description_ncs4]
+    @total_ncs1 = params[:total_ncs1]
+    @total_ncs2 = params[:total_ncs2]
+    @total_ncs3 = params[:total_ncs3]
+    @total_ncs4 = params[:total_ncs4]
+    @subtotal_ncs = params[:subtotal_ncs]
+
+    @total_cost = params[:total_cost]
+    @insurance_pays = params[:insurance_pays]
+    @patient_copay = params[:patient_copay]
+    @patient_deductible = params[:patient_deductible]
+    @patient_coins = params[:patient_coins]
+    @patient_total_out_of_pocket_estimate = params[:patient_total_out_of_pocket_estimate]
+
+    @visit_templates = VisitTemplate.all
+    respond_to do |format|
+      format.pdf do
+        render template: "cost_estimates/print_pdf.html.erb",
+               :pdf          => 'foo',
+               :save_to_file => Rails.root.join('public', "foo.pdf"),
+               :save_only    => true
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cost_estimate

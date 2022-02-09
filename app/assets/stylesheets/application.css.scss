@@ -17,3 +17,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.text-right{
+  text-align: right;
+}
+
+.border-thin{
+  border: gray solid;
+  border-left-width: thin;
+}

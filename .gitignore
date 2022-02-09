@@ -2,3 +2,4 @@
 .idea/*
 tmp/*
 .byebug_history
+Gemfile.lock

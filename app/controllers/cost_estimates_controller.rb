@@ -509,6 +509,7 @@ class CostEstimatesController < ApplicationController
     respond_to do |format|
       format.pdf do
         render template: "cost_estimates/print_pdf.html.erb",
+               :pdf          => 'test',
                :save_to_file => Rails.root.join('public', "test.pdf"),
                :save_only    => true
       end

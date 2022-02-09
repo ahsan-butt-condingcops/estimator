@@ -454,7 +454,6 @@ class CostEstimatesController < ApplicationController
   end
 
   def print_pdf
-    # debugger
     @patient_name = params[:patient_name]
 
     @terminology_fcs1 = params[:terminology_fcs1]
@@ -510,8 +509,8 @@ class CostEstimatesController < ApplicationController
     respond_to do |format|
       format.pdf do
         render template: "cost_estimates/print_pdf.html.erb",
-               :pdf          => 'foo',
-               :save_to_file => Rails.root.join('public', "foo.pdf"),
+               :pdf          => 'test',
+               :save_to_file => Rails.root.join('public', "test.pdf"),
                :save_only    => true
       end
     end

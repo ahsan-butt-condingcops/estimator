@@ -8,9 +8,7 @@
 #
 # https://github.com/mileszs/wicked_pdf/blob/master/README.md
 WickedPdf.config ||= {}
-WickedPdf.config = {
-  exe_path: '/usr/local/bin/wkhtmltopdf'
-}
+WickedPdf.config = { :exe_path => “#{Rails.root}/bin/wkhtmltopdf” }
 WickedPdf.config.merge!({
                           layout: "pdf.html.erb",
                           orientation: "Landscape", # Portrait

@@ -58,4 +58,4 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 
 gem 'bootstrap', '~> 4.1.3'
-gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
+gem 'wicked_pdf'
